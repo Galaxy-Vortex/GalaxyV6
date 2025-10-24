@@ -1,0 +1,4 @@
+onlyBuiltDependencies:
+  - '@mercuryworkshop/scramjet'
+  - bufferutil
+  - utf-8-validate
