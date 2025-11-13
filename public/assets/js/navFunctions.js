@@ -9,43 +9,34 @@ const proxyMenu = document.getElementById("proxyMenu");
 const setUV = document.getElementById("setUV");
 const setSJ = document.getElementById("setSJ");
 const setAuto = document.getElementById("setAuto");
+const shortcut = document.getElementById("AddShortcut");
+const iframe = document.getElementById(
+  "frame" + activeTabId.replace("tab", "")
+);
 
 reload.addEventListener("click", () => {
-  const iframe = document.getElementById(
-    "frame" + activeTabId.replace("tab", "")
-  );
   iframe.contentWindow.location.reload();
   input.value = getOriginalUrl(iframe.src);
 });
 
 forward.addEventListener("click", () => {
-  const iframe = document.getElementById(
-    "frame" + activeTabId.replace("tab", "")
-  );
   iframe.contentWindow.history.forward();
 });
 
 back.addEventListener("click", () => {
-  const iframe = document.getElementById(
-    "frame" + activeTabId.replace("tab", "")
-  );
   iframe.contentWindow.history.back();
 });
-
-// Toggle main menu
 moreBtn.addEventListener("click", (e) => {
   moreMenu.classList.toggle("show");
   overlay.classList.toggle("show");
   e.stopPropagation();
 });
 
-// Toggle proxy submenu
 changeProxy.addEventListener("click", (e) => {
   proxyMenu.classList.toggle("show");
   e.stopPropagation();
 });
 
-// Proxy actions
 setUV.addEventListener("click", () => {
   console.log("UV selected");
   localStorage.setItem("proxyType", "UV");
@@ -62,9 +53,82 @@ setSJ.addEventListener("click", () => {
   overlay.classList.remove("show");
 });
 
-// Close menus when overlay clicked
 overlay.addEventListener("click", () => {
-  overlay.classList.remove("hide");
-  moreMenu.classList.remove("hide");
-  proxyMenu.classList.remove("hide");
+  overlay.classList.toggle("hide");
+  moreMenu.classList.toggle("hide");
+  proxyMenu.classList.remove("show");
 });
+let shortcutNumber = localStorage.getItem("shortcutNumber") || 0;
+
+function AddShortcut() {
+  shortcutNumber++;
+  let shortcuturl = prompt("Enter Shortcut URL", "https://example.com");
+  if (!shortcuturl) return;
+
+  localStorage.setItem("shortcutURL" + shortcutNumber, shortcuturl);
+
+  let shortcutname = prompt("Enter Shortcut Name", "Example");
+  if (!shortcutname) shortcutname = shortcuturl;
+
+  localStorage.setItem("shortcutname" + shortcutNumber, shortcutname);
+  localStorage.setItem("shortcutNumber", shortcutNumber);
+
+  const bookmarks = document.getElementById("bookmarks");
+
+  const bookmark = document.createElement("div");
+  bookmark.className = "bookmarklets";
+  bookmark.id = "bookmarklets" + shortcutNumber;
+  bookmark.textContent = shortcutname;
+
+  bookmark.onclick = () => {
+    input.value = shortcuturl;
+    input.dispatchEvent(
+      new KeyboardEvent("keyup", { key: "Enter", keyCode: 13, bubbles: true })
+    );
+  };
+
+  bookmark.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    const confirmDelete = confirm(`Remove bookmark "${shortcutname}"?`);
+    if (confirmDelete) {
+      localStorage.removeItem("shortcutURL" + shortcutNumber);
+      localStorage.removeItem("shortcutname" + shortcutNumber);
+      bookmark.remove();
+    }
+  });
+
+  bookmarks.appendChild(bookmark);
+}
+
+window.onload = () => {
+  const bookmarks = document.getElementById("bookmarks");
+  const count = localStorage.getItem("shortcutNumber") || 0;
+
+  for (let i = 1; i <= count; i++) {
+    const url = localStorage.getItem("shortcutURL" + i);
+    const name = localStorage.getItem("shortcutname" + i);
+    if (!url || !name) continue;
+
+    const bookmark = document.createElement("div");
+    bookmark.className = "bookmarklets";
+    bookmark.id = "bookmarklets" + i;
+    bookmark.textContent = name;
+    bookmark.onclick = () => {
+      input.value = url;
+      input.dispatchEvent(
+        new KeyboardEvent("keyup", { key: "Enter", keyCode: 13, bubbles: true })
+      );
+    };
+    bookmark.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+      const confirmDelete = confirm(`Remove bookmark "${name}"?`);
+      if (confirmDelete) {
+        localStorage.removeItem("shortcutURL" + i);
+        localStorage.removeItem("shortcutname" + i);
+        bookmark.remove();
+      }
+    });
+
+    bookmarks.appendChild(bookmark);
+  }
+};
