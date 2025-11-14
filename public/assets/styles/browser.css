@@ -296,19 +296,20 @@ body {
   flex-direction: row;
   gap: 10px;
   padding-top: 5px;
-  padding-bottom: 3px;
-  padding-left: 10px;
+  padding-bottom: 5px;
   background-color: #b6b6b64b;
 }
 .bookmarklets {
-  display: flex;
   align-items: center;
-  width: auto;
-  padding: 4px;
+  padding: 5px;
   transition-duration: 0.4s;
   font-size: 12px;
   font-family: fabrica;
   font-weight: 1000;
+  max-width: 125px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .bookmarklets:hover {
   border-radius: 5px;

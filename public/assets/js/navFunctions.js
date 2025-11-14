@@ -74,12 +74,12 @@ let shortcutNumber = localStorage.getItem("shortcutNumber") || 0;
 
 function AddShortcut() {
   shortcutNumber++;
-  let shortcuturl = prompt("Enter Shortcut URL", "https://example.com");
+  let shortcuturl = prompt("Enter Shortcut URL", input.value);
   if (!shortcuturl) return;
 
   localStorage.setItem("shortcutURL" + shortcutNumber, shortcuturl);
 
-  let shortcutname = prompt("Enter Shortcut Name", "Example");
+  let shortcutname = prompt("Enter Shortcut Name", iframe.contentDocument?.title || "Untitled");
   if (!shortcutname) shortcutname = shortcuturl;
 
   localStorage.setItem("shortcutname" + shortcutNumber, shortcutname);
