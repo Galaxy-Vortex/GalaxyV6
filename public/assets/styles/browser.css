@@ -311,7 +311,8 @@ body {
 .frame,
 .bookmarks,
 .bookmarklets,
-.notice {
+.notice,
+.windowcontrolicon {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -375,21 +376,4 @@ body {
   to {
     right: -120px;
   }
-}
-.windowControls {
-  margin-left: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
-  height: 100%; 
-}
-.windowIcons {
-  height: 15px;
-
-}
-#squares {
-  display: none;
 }

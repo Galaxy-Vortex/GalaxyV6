@@ -236,3 +236,49 @@ body {
   width: auto;
   color: white;
 }
+.window {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  height: 500px;
+  width: 900px;
+    cursor: move;
+}
+.windowControls {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: auto;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  background-color: #2e2e2e;
+}
+
+.windowcontrolicon {
+  cursor: default;
+
+  height: 20px;
+  width: 35px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.15s;
+}
+.windowcontrolicon:hover {
+  background-color: #ffffff30;
+}
+.windowcontroliconred:hover {
+  background-color: #e92626;
+}
+.windowIcons {
+  height: 10px;
+}
+#squares {
+  display: none;
+}
+.windowFrame {
+  height: 100%;
+  width: 100%;
+  border: 0px;
+}
