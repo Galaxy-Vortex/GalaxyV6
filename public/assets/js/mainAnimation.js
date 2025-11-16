@@ -1,12 +1,12 @@
 if (localStorage.getItem("onboarding") == null) {
   location.href = "onboarding/";
-} else {
 }
+
 let UserName = localStorage.getItem("name");
 let backgroundURL = localStorage.getItem("backgroundURL");
+
 if (backgroundURL == null) {
   localStorage.setItem("backgroundURL", "assets/img/bg3.png");
-} else {
 }
 backgroundURL = localStorage.getItem("backgroundURL");
 
@@ -17,17 +17,10 @@ document.documentElement.style.setProperty(
 
 gsap.fromTo(
   ".navStagger",
-  {
-    y: 30,
-    opacity: 0,
-  },
-  {
-    duration: 0.4,
-    y: 0,
-    opacity: 1,
-    stagger: 0.1,
-  }
+  { y: 30, opacity: 0 },
+  { duration: 0.4, y: 0, opacity: 1, stagger: 0.1 }
 );
+
 let zindex = 0;
 
 function openWindow(windowSrc) {
@@ -39,8 +32,7 @@ function openWindow(windowSrc) {
   windowEl.style.position = "absolute";
   windowEl.style.left = "500px";
   windowEl.style.top = "100px";
-  windowEl.style.boxSizing = "border-box";
-  windowEl.style.zIndex = zindex++;
+  windowEl.style.zIndex = ++zindex;
 
   windowEl.innerHTML = `
     <div class="windowTop">
@@ -58,20 +50,24 @@ function openWindow(windowSrc) {
         </div>
       </div>
     </div>
-    <div class="resize-handle" 
-    </div>
+    <div class="resize-handle"></div>
   `;
+
   const squareBtn = windowEl.querySelector(".square");
-  squareBtn.addEventListener("click", changeIcon);
   const closeBtn = windowEl.querySelector(".closeIcon");
-  closeBtn.addEventListener("click", closeWindow);
   const minimizeBtn = windowEl.querySelector(".minimize");
+
+  squareBtn.addEventListener("click", changeIcon);
+  closeBtn.addEventListener("click", closeWindow);
   minimizeBtn.addEventListener("click", minimizeWindow);
+
   iframe.className = "windowFrame";
   iframe.src = windowSrc;
   iframe.style.width = "100%";
+  iframe.style.height = "calc(100% - 30px)";
   iframe.style.border = "none";
   windowEl.appendChild(iframe);
+
   document.body.appendChild(windowEl);
 
   const controls = windowEl.querySelector(".windowMove");
@@ -80,17 +76,19 @@ function openWindow(windowSrc) {
   let isDragging = false;
   let isResizing = false;
   let offset = { x: 0, y: 0 };
-  let frame = document.querySelectorAll(".windowFrame");
+  const allIframes = document.querySelectorAll(".windowFrame");
+
   controls.addEventListener("mousedown", (e) => {
     windowEl.style.transition = "0s";
-
-
     if (windowValue === "1") {
+      allIframes.forEach((f) => (f.style.pointerEvents = "none"));
       isDragging = true;
       offset.x = e.clientX - windowEl.offsetLeft;
       offset.y = e.clientY - windowEl.offsetTop;
     } else {
       changeIcon();
+      allIframes.forEach((f) => (f.style.pointerEvents = "none"));
+
       windowEl.style.transition = "0s";
       windowEl.style.top = "0px";
       isDragging = true;
@@ -98,94 +96,82 @@ function openWindow(windowSrc) {
       offset.y = e.clientY - windowEl.offsetTop;
     }
   });
+
   windowEl.addEventListener("mousedown", () => {
-    zindex++;
-    windowEl.style.zIndex=zindex;
-    console.log(zindex)
-
+    windowEl.style.zIndex = ++zindex;
   });
-  // --- resizing stuff
-  resizeHandle.addEventListener("mousedown", (e) => {
-    windowEl.style.transition = "0s";
 
+  resizeHandle.addEventListener("mousedown", (e) => {
+    e.stopPropagation();
     isResizing = true;
     offset.x = e.clientX;
     offset.y = e.clientY;
-    e.stopPropagation();
-  });
-  document.addEventListener("mousemove", (e) => {
-
+    allIframes.forEach((f) => (f.style.pointerEvents = "none"));
     windowEl.style.transition = "0s";
+  });
+
+  document.addEventListener("mousemove", (e) => {
     if (isDragging) {
       let newX = e.clientX - offset.x;
       let newY = e.clientY - offset.y;
-
-      const winW = windowEl.offsetWidth;
-      const winH = windowEl.offsetHeight;
-      const maxX = window.innerWidth - winW;
-      const maxY = window.innerHeight - winH;
-
-      newX = Math.max(0, Math.min(newX, maxX));
-      newY = Math.max(0, Math.min(newY, maxY));
-
-      windowEl.style.left = newX + "px";
-      windowEl.style.top = newY + "px";
+      const maxX = window.innerWidth - windowEl.offsetWidth;
+      const maxY = window.innerHeight - windowEl.offsetHeight;
+      windowEl.style.left = Math.max(0, Math.min(newX, maxX)) + "px";
+      windowEl.style.top = Math.max(0, Math.min(newY, maxY)) + "px";
     }
-
     if (isResizing) {
-      const newWidth = Math.max(200, e.clientX - windowEl.offsetLeft);
-      const newHeight = Math.max(150, e.clientY - windowEl.offsetTop);
-      windowEl.style.width = newWidth + "px";
-      windowEl.style.height = newHeight + "px";
+      const w = Math.max(200, e.clientX - windowEl.offsetLeft);
+      const h = Math.max(150, e.clientY - windowEl.offsetTop);
+      windowEl.style.width = w + "px";
+      windowEl.style.height = h + "px";
     }
   });
 
   document.addEventListener("mouseup", () => {
     isDragging = false;
     isResizing = false;
+    allIframes.forEach((f) => (f.style.pointerEvents = "auto"));
   });
+
   let square = windowEl.querySelector("#square");
   let squares = windowEl.querySelector("#squares");
+
   function changeIcon() {
+    windowEl.style.transition =
+      "width 0.3s ease, height 0.3s ease, left 0.3s ease, top 0.3s ease";
+
     if (windowValue === "1") {
-      windowEl.style.transition =
-        "width 0.3s ease, height 0.3s ease, left 0.3s ease, top 0.3s ease";
       square.style.display = "none";
       squares.style.display = "flex";
       windowValue = "0";
-      console.log(windowValue);
       windowEl.style.left = "0px";
       windowEl.style.top = "0px";
       windowEl.style.width = window.innerWidth + "px";
       windowEl.style.height = window.innerHeight + "px";
     } else {
-      windowEl.style.transition =
-        "width 0.3s ease, height 0.3s ease, left 0.3s ease, top 0.3s ease";
       squares.style.display = "none";
       square.style.display = "flex";
       windowValue = "1";
-      console.log(windowValue);
       windowEl.style.left = "500px";
       windowEl.style.top = "200px";
       windowEl.style.width = "900px";
       windowEl.style.height = "500px";
     }
   }
+
   function closeWindow() {
     windowEl.style.animation = "closeWindow 0.2s ease forwards";
     windowEl.addEventListener("animationend", () => {
       windowEl.remove();
     });
   }
+
   function minimizeWindow() {
     const minimizedContainer = document.getElementById("minimizedContainer");
-
-    // Create minimized icon
     const icon = document.createElement("div");
     icon.className = "minimizedWindowIcon";
     minimizedContainer.appendChild(icon);
 
-    // Animate window shrink
     const rect = icon.getBoundingClientRect();
     windowEl.style.transition = "all 0.3s ease";
     windowEl.style.width = rect.width + "px";
@@ -194,9 +180,7 @@ function openWindow(windowSrc) {
     windowEl.style.top = rect.top + "px";
     windowEl.style.opacity = "0";
 
-    setTimeout(() => {
-      windowEl.style.display = "none";
-    }, 300);
+    setTimeout(() => (windowEl.style.display = "none"), 300);
 
     const preview = document.createElement("div");
     preview.className = "minimizedPreview";
@@ -226,7 +210,7 @@ function openWindow(windowSrc) {
       windowEl.style.left = "500px";
       windowEl.style.top = "200px";
       windowEl.style.opacity = "1";
-
+      windowEl.style.zIndex = ++zindex;
       icon.remove();
       preview.remove();
     });
