@@ -28,6 +28,7 @@ gsap.fromTo(
     stagger: 0.1,
   }
 );
+let zindex = "0";
 
 function openWindow(windowSrc) {
   const windowEl = document.createElement("div");
@@ -39,6 +40,7 @@ function openWindow(windowSrc) {
   windowEl.style.left = "500px";
   windowEl.style.top = "100px";
   windowEl.style.boxSizing = "border-box";
+  windowEl.style.zIndex = zindex++;
 
   windowEl.innerHTML = `
     <div class="windowTop">
@@ -56,9 +58,7 @@ function openWindow(windowSrc) {
         </div>
       </div>
     </div>
-    <div class="resize-handle" style="
-      position: absolute; width: 20px; height: 20px; right: 0; bottom: 0;
-      cursor: se-resize; background: transparent;">
+    <div class="resize-handle" 
     </div>
   `;
   const squareBtn = windowEl.querySelector(".square");
@@ -81,14 +81,15 @@ function openWindow(windowSrc) {
   let isDragging = false;
   let isResizing = false;
   let offset = { x: 0, y: 0 };
-
+  let frame = document.querySelectorAll(".windowFrame");
   controls.addEventListener("mousedown", (e) => {
     windowEl.style.transition = "0s";
+    windowEl.style.zIndex = zindex++;
     if (windowValue === "1") {
       isDragging = true;
       offset.x = e.clientX - windowEl.offsetLeft;
       offset.y = e.clientY - windowEl.offsetTop;
-      iframe.style.pointerEvents = "none";
+      frame.forEach((f) => (f.style.pointerEvents = "none"));
     } else {
       changeIcon();
       windowEl.style.transition = "0s";
@@ -96,13 +97,14 @@ function openWindow(windowSrc) {
       isDragging = true;
       offset.x = e.clientX - windowEl.offsetLeft;
       offset.y = e.clientY - windowEl.offsetTop;
-      iframe.style.pointerEvents = "none";
+      frame.forEach((f) => (f.style.pointerEvents = "none"));
     }
   });
 
   // --- resizing stuff
   resizeHandle.addEventListener("mousedown", (e) => {
     windowEl.style.transition = "0s";
+    windowEl.style.zIndex = zindex++;
     isResizing = true;
     offset.x = e.clientX;
     offset.y = e.clientY;
@@ -110,6 +112,8 @@ function openWindow(windowSrc) {
     e.stopPropagation();
   });
   document.addEventListener("mousemove", (e) => {
+    iframe.style.pointerEvents = "none";
+
     windowEl.style.transition = "0s";
     if (isDragging) {
       let newX = e.clientX - offset.x;
@@ -196,7 +200,7 @@ function openWindow(windowSrc) {
 
     const preview = document.createElement("div");
     preview.className = "minimizedPreview";
-    preview.innerHTML = windowEl.innerHTML; 
+    preview.innerHTML = windowEl.innerHTML;
     document.body.appendChild(preview);
 
     icon.addEventListener("mouseenter", (e) => {
@@ -215,7 +219,7 @@ function openWindow(windowSrc) {
     });
 
     icon.addEventListener("click", () => {
-      windowEl.style.display = "block";
+      windowEl.style.display = "flex";
       windowEl.style.transition = "all 0.3s ease";
       windowEl.style.width = "900px";
       windowEl.style.height = "500px";
