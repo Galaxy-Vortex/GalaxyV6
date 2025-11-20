@@ -1,5 +1,3 @@
-/* All styles are stored in one css file because swup.js won't update the header when the page transitions */
-
 html {
   overflow-x: hidden;
   /* THEMES */
@@ -30,128 +28,6 @@ body {
   overflow-x: hidden;
   height: auto;
 }
-/*====================*/
-/*====================*/
-/*====================*/
-/*SCROLLBAR*/
-/*====================*/
-/*====================*/
-/*====================*/
-
-
-/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
-/** {
-  scrollbar-width: thin;
-  scrollbar-color: #767676 #C5C5C5;
-}*/
-
-/* Chrome, Edge and Safari */
-*::-webkit-scrollbar {
-  height: 10px;
-  width: 10px;
-}
-*::-webkit-scrollbar-track {
-  border-radius: 5px;
-  background-color: #C5C5C5;
-}
-
-*::-webkit-scrollbar-track:hover {
-  background-color: #C5C5C5;
-}
-
-*::-webkit-scrollbar-track:active {
-  background-color: #C5C5C5;
-}
-
-*::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: #767676;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background-color: #575757;
-}
-
-*::-webkit-scrollbar-thumb:active {
-  background-color: #575757;
-}
-
-
-#backgroundf {
-  top: 0;
-  right: 0;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  transition: background 0.5s ease;
-  z-index: -111;
-  transform: scale(1.05);
-  background: transparent;
-  backdrop-filter: blur(15px) brightness(0.4);
-}
-
-#search {
-  opacity: 0;
-  animation: ghostin 1s ease-out 0.5s forwards;
-  font-size: 14px;
-  border-radius: 5px;
-  border: 2px solid var(--input-border);
-  outline: none;
-  background: none;
-  color: var(--h1);
-  width: 38rem;
-  background-image: url("/global/img/search.png");
-  background-size: 20px;
-  background-position: 10px 15px;
-  background-repeat: no-repeat;
-  padding: 15px 0px 15px 40px;
-  margin-bottom: 10vh;
-  transition-duration: 0.5s;
-}
-#search:focus {
-  transform: scale(1.05);
-  border: 2px solid var(--input-border-focus);
-}
-#controls {
-  background-color: var(--background-color);
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 2.5rem;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  padding: 0 0.5rem;
-  gap: 0.5rem;
-}
-
-#controls button {
-  background: var(--button-background);
-  border: none;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-  border-radius: 6px;
-  padding: 0.25rem 0.5rem;
-}
-
-#web {
-  z-index: 100000;
-  position: fixed;
-  top: 2.5rem;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: calc(100% - 2.5rem);
-  border: none;
-  background: #212121;
-  user-select: none;
-}
-
 /*----------------------------------------------------*/
 /*----------------------------------------------------*/
 /* GAME/APPS */
@@ -479,4 +355,19 @@ label a,
 .filler {
   position: absolute;
   opacity: 0;
+}@keyframes ghostin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes ghostinhalf {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.7;
+  }
 }
