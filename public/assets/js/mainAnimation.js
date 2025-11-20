@@ -79,6 +79,9 @@ function openWindow(windowSrc) {
 
   const controls = windowEl.querySelector(".windowMove");
   const handles = windowEl.querySelectorAll(".resize-handle");
+controls.addEventListener("dblclick", () => {
+  changeIcon(); 
+});
 
   let isDragging = false;
   let isResizing = false;
