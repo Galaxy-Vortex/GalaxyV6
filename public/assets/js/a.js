@@ -30,7 +30,13 @@ fetch("/assets/json/a.json")
       gameElement.addEventListener("click", async () => {
         if (game.url) {
           var ute = game.url;
-          openApp(ute, "UV");
+          let xt;
+          if(game.type) {
+            xt = game.type
+          } else {
+            xt="UV"
+          }
+          openApp(ute, xt);
           frame.style.zIndex = "1";
 
           document.documentElement.style.overflow = "hidden";

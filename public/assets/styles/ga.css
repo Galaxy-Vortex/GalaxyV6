@@ -292,7 +292,7 @@ body {
 #goBackBtn {
   position: fixed;
   top: -80px;
-  right: 20px;
+  right: -30px;
   width: 60px;
   height: 60px;
   background-color: #222;
@@ -304,8 +304,11 @@ body {
   cursor: pointer;
   z-index: 9999;
   transition: top 0.3s ease;
+  transition: all 0.3s;
 }
-
+#goBackBtn:hover {
+  right: 20px
+}
 /* RESPONSIVE WIDTH BREAKPOINTS */
 @media (max-width: 1590px) {
   html {

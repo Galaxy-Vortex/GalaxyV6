@@ -100,6 +100,12 @@
     "genre": "Development"
   },
   {
+    "name": "Grok",
+    "url": "https://grok.com",
+    "image": "",
+    "genre": "AI"
+  },
+  {
     "name": "Luna Amazon",
     "url": "https://luna.amazon.com/",
     "image": "luna.jpg",
@@ -153,7 +159,8 @@
     "name": "TikTok",
     "url": "https://TikTok.com",
     "image": "TikTok.webp",
-    "genre": "Social Media"
+    "genre": "Social Media",
+    "type": "SJ"
   },
   {
     "name": "VS Code",
