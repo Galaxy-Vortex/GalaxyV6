@@ -60,8 +60,6 @@ function newTab() {
         let remainingTabs = document.querySelectorAll(".tab");
         if (remainingTabs.length > 0)
           setActiveTab(remainingTabs[remainingTabs.length - 1]);
-
-        
       }
     });
   });
@@ -85,7 +83,6 @@ function newTab() {
   });
   tabCount++;
   setActiveTab(tab);
-  
 }
 
 newTab();
@@ -116,4 +113,11 @@ function getOriginalUrl(url) {
     return decoded;
   }
   return url;
+}
+async function bugReports() {
+  newTab();
+  input.value = "https://forms.gle/rK5gcpLTwPGreqXs6";
+  input.dispatchEvent(
+    new KeyboardEvent("keyup", { key: "Enter", keyCode: 13, bubbles: true })
+  );
 }

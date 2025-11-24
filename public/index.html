@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GalaxyV6</title>
     <link rel="stylesheet" href="assets/styles/style.css" />
-    <link rel="stylesheet" href="../assets/styles/assets.css" />
+    <link rel="stylesheet" href="assets/styles/assets.css" />
 
     <link
       rel="stylesheet"
@@ -27,7 +27,10 @@
       <div class="navItems navStagger" onclick="openWindow('a/index.html')">
         <img src="assets/img/icons/apps.png" class="icons" />
       </div>
-      <div class="navItems navStagger">
+      <div
+        class="navItems navStagger"
+        onclick="openWindow('app.html');   localStorage.setItem('storeAppURL', 'https://discord.com/app')"
+      >
         <img src="assets/img/icons/discord.png" class="icons" />
       </div>
       <div

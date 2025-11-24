@@ -102,7 +102,6 @@ function AddShortcut() {
   bookmark.id = "bookmarklets" + shortcutNumber;
   bookmark.textContent = shortcutname;
 
-  // Left-click action
   bookmark.onclick = () => {
     input.value = shortcuturl;
     input.dispatchEvent(
@@ -110,16 +109,13 @@ function AddShortcut() {
     );
   };
 
-  // Right-click action for deletion
   bookmark.addEventListener("contextmenu", (e) => {
-    e.preventDefault(); // Prevent default context menu
+    e.preventDefault(); 
     const confirmDelete = confirm(`Remove bookmark "${shortcutname}"?`);
     if (confirmDelete) {
-      // Remove from localStorage
       localStorage.removeItem("shortcutURL" + shortcutNumber);
       localStorage.removeItem("shortcutname" + shortcutNumber);
 
-      // Remove from DOM
       bookmark.remove();
     }
   });
@@ -141,7 +137,6 @@ window.onload = () => {
     bookmark.id = "bookmarklets" + i;
     bookmark.textContent = name;
 
-    // Left-click
     bookmark.onclick = () => {
       input.value = url;
       input.dispatchEvent(
@@ -149,7 +144,6 @@ window.onload = () => {
       );
     };
 
-    // Right-click deletion
     bookmark.addEventListener("contextmenu", (e) => {
       e.preventDefault();
       const confirmDelete = confirm(`Remove bookmark "${name}"?`);

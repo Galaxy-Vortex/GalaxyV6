@@ -33,13 +33,13 @@
 }
 /* Scrollbar width */
 ::-webkit-scrollbar {
-  width: 12px; /* width of vertical scrollbar */
+  width: 8px; /* width of vertical scrollbar */
   height: 12px; /* height of horizontal scrollbar */
 }
 
 /* Track (background) */
 ::-webkit-scrollbar-track {
-  background: #505050; /* light gray */
+  background: #000000ab; /* light gray */
   border-radius: 10px; /* rounded corners */
 }
 
