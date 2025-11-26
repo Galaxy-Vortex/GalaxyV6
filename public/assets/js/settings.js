@@ -50,7 +50,7 @@ function aboutBlank() {
             <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/classroom/favicon.png">
         </head>
         <body>
-          <iframe src="/"></iframe>
+          <iframe src="/p.html"></iframe>
         </body>
         <style>
     body,iframe {

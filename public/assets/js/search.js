@@ -9,10 +9,17 @@ import("../../uv/uv.config.js");
 let iframe;
 let protocol = location.protocol === "https:" ? "wss://" : "ws://";
 let host = location.host;
-
+let transportx;
+if (localStorage.getItem("transportType") == null) {
+  localStorage.setItem("transportType", "libcurl");
+  transportx = "libcurl";
+} else {
+  transportx = localStorage.getItem("transportType");
+}
+setTransport(transportx);
+console.log(transportx);
 setWisp(`${protocol}${host}/wisp/`);
-setTransport("epoxy");
-
+const uvList = ["https://discord.com"];
 document.addEventListener("keyup", async (e) => {
   if (e.key === "Enter" || e.keyCode === 13) {
     let tabNumber = activeTabId.replace("tab", "");
@@ -43,7 +50,20 @@ document.addEventListener("keyup", async (e) => {
     });
     let url;
     let proxyType = localStorage.getItem("proxyType"); //Checks for proxy
-    if (proxyType === "SJ") {
+    if (proxyType == null || proxyType == "Auto") {
+      proxyType = "Auto"
+      const match = uvList.findIndex((base) => input.value.startsWith(base));
+      if (match == -1) {
+        console.log("loading SJ");
+        url = await proxySJ(makeURL(input.value));
+        loadingShow();
+      } else {
+        console.log("loading UV");
+
+        url = await proxyUV(makeURL(input.value));
+        loadingShow();
+      }
+    } else if (proxyType === "SJ") {
       url = await proxySJ(makeURL(input.value));
       loadingShow();
       console.log("set to SJ");
@@ -51,14 +71,9 @@ document.addEventListener("keyup", async (e) => {
       url = await proxyUV(makeURL(input.value));
       loadingShow();
       console.log("set to UV");
-    } else {
-      localStorage.setItem("proxyType", "SJ");
-      proxyType = localStorage.getItem("proxyType");
-      url = await proxySJ(makeURL(input.value));
-      loadingShow();
-      console.log("Not set");
     }
     iframe.src = url;
+
     if (proxyType === "SJ") {
       updateIframeTitle();
 

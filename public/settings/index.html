@@ -188,6 +188,28 @@
         </div>
       </div>
       <div class="block">
+        <h2 class="blockTitle">Transport</h2>
+        <p class="desc">
+          This setting changes the proxy's protocol. <br />
+          Epoxy is faster but libcurl supports more sites such as GeForce Now
+          <br />
+          The default is libcurl. <br />
+          <br />
+          <span style="color: rgb(218, 135, 28)"
+            >*This setting requires reload for changes to apply.</span
+          >
+        </p>
+        <div>
+          <button onclick="localStorage.setItem('transportType', 'libcurl')">
+            Use Libcurl
+          </button>
+          <button onclick="localStorage.setItem('transportType', 'epoxy')">
+            Use Epoxy
+          </button>
+        </div>
+      </div>
+
+      <div class="block">
         <h2 class="blockTitle">Change Search Engine</h2>
         <p class="desc">
           Changes the search engine of the proxy. <br />

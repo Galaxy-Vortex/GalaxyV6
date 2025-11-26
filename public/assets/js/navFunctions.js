@@ -13,7 +13,6 @@ const setSJ = document.getElementById("setSJ");
 const changeEngine = document.getElementById("changeEngine");
 const engineMenu = document.getElementById("engineMenu");
 const setAuto = document.getElementById("setAuto");
-const shortcut = document.getElementById("AddShortcut");
 let iframe = document.getElementById("frame" + activeTabId.replace("tab", ""));
 let PchangeNotice = document.createElement("div");
 function pchangeShow(proxyType) {
@@ -64,6 +63,14 @@ setUV.addEventListener("click", () => {
   moreMenu.classList.remove("show");
   overlay.classList.remove("show");
   pchangeShow("UV");
+});
+setAuto.addEventListener("click", () => {
+  console.log("Auto selected");
+  localStorage.setItem("proxyType", "Auto");
+  proxyMenu.classList.remove("show");
+  moreMenu.classList.remove("show");
+  overlay.classList.remove("show");
+  pchangeShow("Auto");
 });
 
 setSJ.addEventListener("click", () => {
