@@ -230,6 +230,8 @@ body {
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
 }
 .menuItem:hover {
   background-color: #444;
@@ -350,4 +352,11 @@ body {
   to {
     right: -120px;
   }
+}
+
+.menuIcons {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  filter: brightness(0.75);
 }

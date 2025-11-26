@@ -306,7 +306,7 @@ function openWindow(windowSrc) {
       windowEl.style.left = "0px";
       windowEl.style.top = "0px";
       windowEl.style.width = "50vw";
-      windowEl.style.height = "100vh";
+      windowEl.style.height = "calc(100% - 40px)";
     } else if (snapTarget === "right") {
       windowEl.classList.add("snapped");
       snapRight.classList.remove("snap-active");
@@ -314,7 +314,7 @@ function openWindow(windowSrc) {
       windowEl.style.left = "50vw";
       windowEl.style.top = "0px";
       windowEl.style.width = "50vw";
-      windowEl.style.height = "100vh";
+      windowEl.style.height = "calc(100% - 40px)";
     }
 
     snapTarget = null;

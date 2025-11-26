@@ -110,7 +110,7 @@ function AddShortcut() {
   };
 
   bookmark.addEventListener("contextmenu", (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     const confirmDelete = confirm(`Remove bookmark "${shortcutname}"?`);
     if (confirmDelete) {
       localStorage.removeItem("shortcutURL" + shortcutNumber);
@@ -160,6 +160,11 @@ window.onload = () => {
 function setSearchEngine(z) {
   localStorage.setItem("searchEngine", z);
 }
+function fullscreen() {
+  iframe = document.getElementById("frame" + activeTabId.replace("tab", ""));
+  iframe.requestFullscreen();
+}
 window.AddShortcut = AddShortcut;
 window.reloadX = reloadX;
 window.setSearchEngine = setSearchEngine;
+window.fullscreen = fullscreen;

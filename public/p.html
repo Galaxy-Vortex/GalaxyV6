@@ -15,7 +15,6 @@
     <script defer type="module" src="assets/js/navFunctions.js"></script>
     <script defer src="assets/js/auto.js"></script>
     <link rel="stylesheet" href="../assets/styles/assets.css" />
-
     <script
       src="https://kit.fontawesome.com/adc83d139e.js"
       crossorigin="anonymous"
@@ -47,16 +46,32 @@
         <i class="fa-solid fa-ellipsis"></i>
 
         <div id="moreMenu" class="menu">
-          <div id="changeProxy" class="menuItem">Change Proxy</div>
+          <div id="changeProxy" class="menuItem">
+            <img
+              src="assets/img/icons/server.png"
+              alt=""
+              class="menuIcons"
+            />Change Proxy
+          </div>
           <div id="proxyMenu" class="submenu">
             <div class="submenuItem" id="setUV">UV</div>
             <div class="submenuItem" id="setSJ">SJ</div>
           </div>
 
           <div id="AddShortcut" class="menuItem" onclick="AddShortcut()">
-            Add Bookmark
+            <img
+              src="assets/img/icons/bookmark.png"
+              alt=""
+              class="menuIcons"
+            />Add Bookmark
           </div>
-          <div id="changeEngine" class="menuItem">Change Search Engine</div>
+          <div id="changeEngine" class="menuItem">
+            <img
+              src="assets/img/icons/search.png"
+              alt=""
+              class="menuIcons"
+            />Change Search Engine
+          </div>
           <div id="engineMenu" class="submenu">
             <div
               class="submenuItem"
@@ -79,7 +94,18 @@
           </div>
 
           <div id="bugReport" class="menuItem" onclick="bugReports()">
-            Bug Report
+            <img
+              src="assets/img/icons/bug-report.png"
+              alt=""
+              class="menuIcons"
+            />Bug Report
+          </div>
+          <div onclick="fullscreen()" class="menuItem">
+            <img
+              src="assets/img/icons/fullscreen.png"
+              alt=""
+              class="menuIcons"
+            />Full Screen
           </div>
         </div>
         <div id="overlay" class=""></div>

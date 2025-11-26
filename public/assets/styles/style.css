@@ -414,7 +414,7 @@ body {
   top: 0px;
   width: 50vw;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.212);
   border: 2px solid rgba(255, 255, 255, 0.4);
   pointer-events: none;
   opacity: 0;
@@ -433,6 +433,7 @@ body {
 }
 .window-overlay {
   position: absolute;
+  background-color: #00000034;
   top: 25px;
   left: 0;
   width: 100%;
