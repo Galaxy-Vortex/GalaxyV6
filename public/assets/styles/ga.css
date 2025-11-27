@@ -1,7 +1,7 @@
 /* ROOT & BASE SETTINGS */
 html {
   overflow-x: hidden;
-  --width: 1440px;
+  --width: 1430px;
 }
 
 body {
@@ -56,7 +56,9 @@ body {
   padding: 15px 0 15px 40px;
   width: 297px;
 }
-
+#gamesearch::placeholder {
+  color: white;
+}
 #gamesearch:focus {
   border-bottom: 1px solid #fff;
 }
@@ -121,8 +123,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  justify-content: center;
   margin-bottom: 100px;
+  gap: 20px;
 }
 
 .game {
@@ -130,7 +132,6 @@ body {
   height: 200px;
   display: flex;
   flex-direction: column;
-  transform: scale(0.9);
 }
 
 .game .cards {
@@ -202,10 +203,8 @@ body {
 /* RANDOM CARD */
 .randomgamebtn {
   backdrop-filter: blur(10px);
-  display: none;
 }
 .randomcard {
-  transform: scale(0.9);
   cursor: pointer;
   position: relative;
   width: 335px;
@@ -216,7 +215,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-    display: none;
 
 }
 

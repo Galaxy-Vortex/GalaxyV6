@@ -146,7 +146,7 @@ function renderGames(games) {
     );
     if (availableGames.length > 0) {
       const randomIndex = Math.floor(Math.random() * availableGames.length);
-      availableGames[randomIndex].click();
+      availableGames[randomIndex].querySelector(".innergame").click();
     }
   });
 

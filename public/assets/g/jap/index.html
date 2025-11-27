@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="height: 100%;">
+<html style="height: 100%">
   <head>
     <title>just a platformer</title>
     <link rel="icon" type="image/png" href="pics/just-a-platformer.png" />
@@ -16,38 +16,38 @@
     <meta name="author" content="TheTastyPi" />
   </head>
   <body onresize="adjustScreen()">
-    <canvas id="bgLayer" style="position: absolute;"></canvas>
-    <canvas id="playerLayer" style="position: absolute;"></canvas>
-    <canvas id="levelLayer" style="position: absolute;"></canvas>
-    <div id="timer" style="background: #ffffff88;">
+    <canvas id="bgLayer" style="position: absolute"></canvas>
+    <canvas id="playerLayer" style="position: absolute"></canvas>
+    <canvas id="levelLayer" style="position: absolute"></canvas>
+    <div id="timer" style="background: #ffffff88">
       00:00:00<br />
       00:00:00
     </div>
     <div
       id="mobileControlsLeft"
-      style="position: absolute; bottom: 0; left: 0;"
+      style="position: absolute; bottom: 0; left: 0"
     ></div>
     <div
       id="mobileControls"
-      style="position: absolute; bottom: 0; right: 0;"
+      style="position: absolute; bottom: 0; right: 0"
     ></div>
     <div
       id="mobileControlsTop"
-      style="position: absolute; top: 0; right: 0; display: none;"
+      style="position: absolute; top: 0; right: 0; display: none"
     >
       <button id="moreBtn" onclick="openMoreMenu()">...</button>
     </div>
     <div id="mainInfo">
       <div>
         "just a platformer"<br />
-        Made by <a href="https://thetastypi.github.io/">TheTastyPi</a> with some contributions by
-        <a href="https://yhvr.me">Yhvr</a><br />
+        Made by <a href="https://thetastypi.github.io/">TheTastyPi</a> with some
+        contributions by <a href="https://yhvr.me">Yhvr</a><br />
         <br />
         Time Played: <span id="timePlayed">0 second</span><br />
         Time in Branch: <span id="branchTime">0 second</span><br />
         Deaths: <span id="deathCount">0</span><br />
         <br />
-        <span id="endStat" style="display: none;">
+        <span id="endStat" style="display: none">
           Completion Time: <span id="timePlayedEnd">0 second</span><br />
           Final Deaths: <span id="deathCountEnd">0</span><br />
           <br />
@@ -56,7 +56,7 @@
         [shift] + [R] to go to hub<br />
         [delete] to wipe save<br />
         [\] to export save data<br />
-        [shift] + [\] to import save data<br>
+        [shift] + [\] to import save data<br />
         <br />
         Difficulties<br />
         <a href="easier/index.html">EZR</a> | <a href="easy/index.html">EZ</a> |
@@ -67,11 +67,10 @@
         <a href="https://discord.gg/zVpdcuaXYF">Discord Server</a>
       </div>
     </div>
-    <button id="infoOpen" onclick="openInfo();">
-      More
-    </button>
-    <div id="wjTip" style="bottom:100%;">
-      Hey, so uh, to walljump,<br>you should hold jump while on the wall,<br>then move away from it. Have fun!
+    <button id="infoOpen" onclick="openInfo();">More</button>
+    <div id="wjTip" style="bottom: 100%">
+      Hey, so uh, to walljump,<br />you should hold jump while on the wall,<br />then
+      move away from it. Have fun!
     </div>
   </body>
   <script src="levels.js"></script>
@@ -81,3 +80,8 @@
   <script src="mobile.js"></script>
   <script src="shared/mobileCore.js"></script>
 </html>
+<style>
+  body {
+    background-color: white;
+  }
+</style>

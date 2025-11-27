@@ -1,64 +1,9 @@
 [
   {
-    "name": "10 Minutes Till Dawn",
-    "file": "/assets/g/1.html",
-    "image": "1.png",
-    "genre": "Action / RPG"
-  },
-  {
-    "name": "A Dark Room",
-    "file": "/assets/g/2.html",
-    "image": "2.png",
-    "genre": "Casual / RPG"
-  },
-  {
-    "name": "ADOFAI",
-    "url": "https://w8.snokido.com/games/unity-webgl/dance-fire-and-ice/index.html",
-    "image": "3.png",
-    "genre": "Rhythm",
-    "type": "UV"
-  },
-  {
-    "name": "Amazing Rope Police",
-    "file": "/assets/g/4.html",
-    "image": "4.png",
-    "genre": "Action / Open World"
-  },
-  {
-    "name": "Baldi's Basics",
-    "file": "/assets/g/5.html",
-    "image": "5.png",
-    "genre": "Horror"
-  },
-  {
-    "name": "Basketball Bros",
-    "file": "/assets/g/6.html",
-    "image": "6.png",
-    "genre": "Multiplayer / Arcade"
-  },
-  {
-    "name": "Basketball Random",
-    "file": "/assets/g/7.html",
-    "image": "7.png",
-    "genre": "Multiplayer / Arcade"
-  },
-  {
-    "name": "BitLife",
-    "file": "/assets/g/8.html",
-    "image": "8.png",
-    "genre": "Simulation"
-  },
-  {
-    "name": "Boxing Random",
-    "file": "/assets/g/9.html",
-    "image": "9.png",
-    "genre": "Arcade / Multiplayer"
-  },
-  {
-    "name": "Cluster Rush",
-    "url": "https://clusterrush.io/game/cluster-rush/",
-    "image": "10.png",
-    "genre": "Platformer"
+    "name": "Minecraft 1.3",
+    "file": "/assets/g/17.html",
+    "image": "17.png",
+    "genre": "Multiplayer / Open World"
   },
   {
     "name": "Cookie Clicker",
@@ -67,129 +12,16 @@
     "genre": "Incremental"
   },
   {
-    "name": "Deathrun 3D",
-    "file": "/assets/g/12.html",
-    "image": "12.pngX",
-    "genre": "Arcade"
+    "name": "Wordle",
+    "file": "/assets/g/58.html",
+    "image": "58.png",
+    "genre": "Casual"
   },
   {
-    "name": "Demonin's Item Shop",
-    "url": "https://demonin.com/games/",
-    "image": "13.jpg",
-    "genre": "Simulation"
-  },
-  {
-    "name": "Draw the hill",
-    "file": "/assets/g/14.html",
-    "image": "14.pngX",
-    "genre": "Strategy / Racing"
-  },
-  {
-    "name": "Drift Hunters",
-    "file": "/assets/g/15.html",
-    "image": "15.png",
-    "genre": "Racing"
-  },
-  {
-    "name": "Drive Mad",
-    "file": "/assets/g/16.html",
-    "image": "16.png",
-    "genre": "Racing"
-  },
-  {
-    "name": "Minecraft 1.3",
-    "file": "/assets/g/17.html",
-    "image": "17.png",
-    "genre": "Multiplayer / Open World"
-  },
-  {
-    "name": "GPOP",
-    "url": "https://gpop.io/",
-    "image": "19.png",
-    "genre": "Rhythm"
-  },
-  {
-    "name": "Helix Jump",
-    "file": "/assets/g/20.html",
-    "image": "20.png",
-    "genre": "Arcade / Casual"
-  },
-  {
-    "name": "HexGL",
-    "url": "https://hexgl.bkcore.com/play/",
-    "image": "21.png",
-    "genre": "Racing"
-  },
-  {
-    "name": "Hole.io",
-    "url": "https://holeio.me/g/41",
-    "image": "22.png",
-    "genre": "Multiplayer"
-  },
-  {
-    "name": "Just a Platformer",
-    "image": "23.pngX",
-    "genre": "Platformer"
-  },
-  {
-    "name": "Madalin Stunt Cars",
-    "url": "https://cargamesarena.com/wp-content/uploads/2025/08/madalin-stunt-cars-2.html",
-    "image": "24.png",
-    "genre": "Racing"
-  },
-  {
-    "name": "Monkey Mart",
-    "file": "/assets/g/25.html",
-    "image": "25.png",
-    "genre": "Incremental"
-  },
-  {
-    "name": "Moto X3M",
-    "file": "/assets/g/26.html",
-    "image": "26.png",
-    "genre": "Racing"
-  },
-  {
-    "name": "osu!",
-    "url": "https://webosu.online/",
-    "image": "27.png",
-    "genre": "Rhythm"
-  },
-  {
-    "name": "ovo",
-    "file": "/assets/g/28.html",
-    "image": "28.png",
-    "genre": "Platformer"
-  },
-  {
-    "name": "ovo2",
-    "file": "/assets/g/60.html",
-    "image": "60.png",
-    "genre": "Platformer"
-  },
-  {
-    "name": "ovo3d",
-    "file": "/assets/g/61.html",
-    "image": "61.png",
-    "genre": "Platformer"
-  },
-  {
-    "name": "Paper.io",
-    "url": "https://games.crazygames.com/en_US/paper-io-2/index.html?skipPrerollFirstSessionExp25=&v=1.329",
-    "image": "29.pngX",
-    "genre": "Multiplayer"
-  },
-  {
-    "name": "PolyTrack",
-    "file": "/assets/g/30.html",
-    "image": "30.png",
-    "genre": "Racing"
-  },
-  {
-    "name": "Resent Client Minecraft",
-    "url": "https://resent4-0.vercel.app/",
-    "image": "31.png",
-    "genre": "Multiplayer / Open World"
+    "name": "Hollow Knight",
+    "file": "/assets/g/69.html",
+    "image": "69.png",
+    "genre": "Action / RPG"
   },
   {
     "name": "Retro Bowl",
@@ -198,112 +30,40 @@
     "genre": "Arcade / Casual"
   },
   {
-    "name": "Slice Master",
-    "file": "/assets/g/33.html",
-    "image": "33.png",
-    "genre": "Arcade"
-  },
-  {
-    "name": "Slope",
-    "file": "/assets/g/34.html",
-    "image": "34.png",
-    "genre": "Arcade"
-  },
-  {
-    "name": "Slope 2 Player",
-    "file": "/assets/g/62.html",
-    "image": "34.pngx",
-    "genre": "Arcade"
-  },
-  {
-    "name": "Slope 3",
-    "file": "/assets/g/63.html",
-    "image": "34.pngx",
-    "genre": "Arcade"
-  },
-  {
-    "name": "Slow Roads",
-    "file": "/assets/g/35.html",
-    "image": "35.png",
-    "genre": "Racing / Open World"
-  },
-  {
-    "name": "Smashkarts",
-    "file": "/assets/g/36.html",
-    "image": "36.png",
-    "genre": "Multiplayer"
-  },
-  {
-    "name": "Soccer Random",
-    "file": "/assets/g/37.html",
-    "image": "37.pngX",
-    "genre": "Multiplayer / Arcade"
-  },
-  {
-    "name": "Space Waves",
-    "file": "/assets/g/38.html",
-    "image": "38.png",
-    "genre": "Platformer"
-  },
-  {
-    "name": "Stickman Warriors",
-    "url": "https://bitlifeonline.github.io/stickman-dragon-fight/",
-    "image": "39.png",
-    "genre": "Action / Arcade"
-  },
-  {
-    "name": "Stickman Combat",
-    "url": "https://bitlifeonline.github.io/stickman-dragon-fight/",
-    "image": "39.pngX",
-    "genre": "Action / Arcade"
-  },
-  {
-    "name": "SuperHot",
-    "file": "/assets/g/40.html",
-    "image": "40.png",
-    "genre": "Action / Shooter"
-  },
-  {
-    "name": "Tanuki Sunset",
-    "file": "/assets/g/42.html",
-    "image": "42.pngX",
-    "genre": "Racing"
-  },
-  {
-    "name": "Throw Rocks at Shit",
-    "file": "/assets/g/43.html",
-    "image": "43.pngX",
-    "genre": "Strategy / Arcade"
-  },
-  {
-    "name": "Tiny Fishing",
-    "file": "/assets/g/44.html",
-    "image": "44.pngX",
-    "genre": "Arcade"
-  },
-  {
-    "name": "Townscaper",
-    "file": "/assets/g/45.html",
-    "image": "45.png",
+    "name": "BitLife",
+    "file": "/assets/g/8.html",
+    "image": "8.png",
     "genre": "Simulation"
   },
   {
-    "name": "Tube Jumpers",
-    "file": "/assets/g/46.html",
-    "image": "46.png",
+    "name": "Friday Night Funkin'",
+    "file": "/assets/g/70.html",
+    "image": "70.png",
+    "genre": "Rhythm"
+  },
+  {
+    "name": "Baldi's Basics",
+    "file": "/assets/g/5.html",
+    "image": "5.png",
+    "genre": "Horror"
+  },
+  {
+    "name": "Hole.io",
+    "url": "https://holeio.me/g/41",
+    "image": "22.png",
     "genre": "Multiplayer"
   },
   {
-    "name": "Tunnel Rush",
-    "file": "/assets/g/47.html",
-    "image": "47.png",
-    "genre": "Arcade"
+    "name": "Paper.io",
+    "url": "https://paperio.site/",
+    "image": "29.png",
+    "genre": "Multiplayer"
   },
   {
-    "name": "Two Player Tag",
-    "file": "/assets/g/48.html",
-    "image": "48.png",
-    "genre": "Multiplayer"
+    "name": "Moto X3M",
+    "file": "/assets/g/26.html",
+    "image": "26.png",
+    "genre": "Racing"
   },
   {
     "name": "Venge.io",
@@ -313,9 +73,45 @@
     "type": "SJ"
   },
   {
-    "name": "Vex 3",
-    "file": "/assets/g/51.html",
-    "image": "51.png",
+    "name": "Drift Hunters",
+    "file": "/assets/g/15.html",
+    "image": "15.png",
+    "genre": "Racing"
+  },
+  {
+    "name": "Smashkarts",
+    "file": "/assets/g/36.html",
+    "image": "36.png",
+    "genre": "Multiplayer"
+  },
+  {
+    "name": "Drive Mad",
+    "file": "/assets/g/16.html",
+    "image": "16.png",
+    "genre": "Racing"
+  },
+  {
+    "name": "Madalin Stunt Cars",
+    "url": "https://cargamesarena.com/wp-content/uploads/2025/08/madalin-stunt-cars-2.html",
+    "image": "24.png",
+    "genre": "Racing"
+  },
+  {
+    "name": "osu!",
+    "url": "https://webosu.online/",
+    "image": "27.png",
+    "genre": "Rhythm"
+  },
+  {
+    "name": "Tunnel Rush",
+    "file": "/assets/g/47.html",
+    "image": "47.png",
+    "genre": "Arcade"
+  },
+  {
+    "name": "Vex 7",
+    "file": "/assets/g/55.html",
+    "image": "55.png",
     "genre": "Platformer"
   },
   {
@@ -325,27 +121,268 @@
     "genre": "Platformer"
   },
   {
-    "name": "Vex 7",
-    "file": "/assets/g/55.html",
-    "image": "55.png",
+    "name": "Vex 3",
+    "file": "/assets/g/51.html",
+    "image": "51.png",
     "genre": "Platformer"
   },
   {
+    "name": "Slope Plus",
+    "file": "/assets/g/34.html",
+    "image": "34.png",
+    "genre": "Arcade"
+  },
+  {
+    "name": "Slope 2 Player",
+    "file": "/assets/g/62.html",
+    "image": "62.png",
+    "genre": "Arcade"
+  },
+  {
+    "name": "Slope 3",
+    "file": "/assets/g/63.html",
+    "image": "63.png",
+    "genre": "Arcade"
+  },
+  {
+    "name": "Helix Jump",
+    "file": "/assets/g/20.html",
+    "image": "20.png",
+    "genre": "Arcade / Casual"
+  },
+  {
+    "name": "Monkey Mart",
+    "file": "/assets/g/25.html",
+    "image": "25.png",
+    "genre": "Incremental"
+  },
+  {
+    "name": "Basketball Random",
+    "file": "/assets/g/7.html",
+    "image": "7.png",
+    "genre": "Multiplayer / Arcade"
+  },
+  {
+    "name": "Soccer Random",
+    "file": "/assets/g/1/index.html",
+    "image": "37.png",
+    "genre": "Multiplayer / Arcade"
+  },
+  {
+    "name": "Boxing Random",
+    "file": "/assets/g/9.html",
+    "image": "9.png",
+    "genre": "Arcade / Multiplayer"
+  },
+  {
+    "name": "Basketball Bros",
+    "file": "/assets/g/6.html",
+    "image": "6.png",
+    "genre": "Multiplayer / Arcade"
+  },
+  {
+    "name": "10 Minutes Till Dawn",
+    "file": "/assets/g/1.html",
+    "image": "1.png",
+    "genre": "Action / RPG"
+  },
+  {
+    "name": "SuperHot",
+    "file": "/assets/g/40.html",
+    "image": "40.png",
+    "genre": "Action / Shooter"
+  },
+  {
+    "name": "OvO",
+    "file": "/assets/g/28.html",
+    "image": "28.png",
+    "genre": "Platformer"
+  },
+  {
+    "name": "OvO 2",
+    "file": "/assets/g/60.html",
+    "image": "60.png",
+    "genre": "Platformer"
+  },
+  {
+    "name": "OvO 3D",
+    "file": "/assets/g/61.html",
+    "image": "61.png",
+    "genre": "Platformer"
+  },
+  {
+    "name": "Granny 3",
+    "file": "/assets/g/66.html",
+    "image": "66.png",
+    "genre": "Horror"
+  },
+  {
+    "name": "A Dark Room",
+    "file": "/assets/g/2.html",
+    "image": "2.png",
+    "genre": "Casual / RPG"
+  },
+  {
+    "name": "Tanuki Sunset",
+    "file": "/assets/g/2/index.html",
+    "image": "42.png",
+    "genre": "Racing"
+  },
+  {
+    "name": "Pokemon Unbound",
+    "file": "/assets/g/68.html",
+    "image": "68.png",
+    "genre": "RPG / Open World "
+  },
+  {
+    "name": "Resent Client Minecraft",
+    "url": "https://resent4-0.vercel.app/",
+    "image": "31.png",
+    "genre": "Multiplayer / Open World"
+  },
+  {
+    "name": "Cluster Rush",
+    "url": "https://clusterrush.io/game/cluster-rush/",
+    "image": "10.png",
+    "genre": "Platformer"
+  },
+  {
+    "name": "Deathrun 3D",
+    "file": "/assets/g/deathrun/",
+    "image": "12.png",
+    "genre": "Arcade"
+  },
+  {
+    "name": "Tiny Fishing",
+    "file": "/assets/g/4/index.html",
+    "image": "44.png",
+    "genre": "Arcade"
+  },
+  {
+    "name": "Stickman Warriors",
+    "url": "https://h5.ant.games/game-assets/17181010411909/index.html",
+    "image": "39.png",
+    "genre": "Action"
+  },
+  {
+    "name": "Stick Kombat",
+    "file": "/assets/g/64.html",
+    "image": "64.png",
+    "genre": "Action"
+  },
+  {
+    "name": "Stickman and Guns",
+    "file": "/assets/g/67.html",
+    "image": "67.png",
+    "genre": "Action"
+  },
+  {
+    "name": "Slice Master",
+    "file": "/assets/g/33.html",
+    "image": "33.png",
+    "genre": "Arcade"
+  },
+  {
+    "name": "Tube Jumpers",
+    "file": "/assets/g/46.html",
+    "image": "46.png",
+    "genre": "Multiplayer"
+  },
+  {
+    "name": "Two Player Tag",
+    "file": "/assets/g/48.html",
+    "image": "48.png",
+    "genre": "Multiplayer"
+  },
+  {
+    "name": "ADOFAI",
+    "url": "https://w8.snokido.com/games/unity-webgl/dance-fire-and-ice/index.html",
+    "image": "3.png",
+    "genre": "Rhythm",
+    "type": "UV"
+  },
+  {
+    "name": "GPOP",
+    "url": "https://gpop.io/",
+    "image": "19.png",
+    "genre": "Rhythm"
+  },
+  {
+    "name": "HexGL",
+    "url": "https://hexgl.bkcore.com/play/",
+    "image": "21.png",
+    "genre": "Racing"
+  },
+  {
+    "name": "PolyTrack",
+    "file": "/assets/g/30.html",
+    "image": "30.png",
+    "genre": "Racing"
+  },
+  {
+    "name": "Slow Roads",
+    "file": "/assets/g/35.html",
+    "image": "35.png",
+    "genre": "Racing / Open World"
+  },
+  {
+    "name": "Survival Race",
+    "file": "/assets/g/65.html",
+    "image": "65.png",
+    "genre": "Racing "
+  },
+  {
+    "name": "Townscaper",
+    "file": "/assets/g/45.html",
+    "image": "45.png",
+    "genre": "Simulation"
+  },
+  {
     "name": "Weavesilk",
-    "file": "/assets/g/56.html",
-    "image": "56.pngX",
+    "file": "/assets/g/5/index.html",
+    "image": "56.png",
     "genre": "Simulation"
   },
   {
     "name": "WebGL Fluid Simulation",
-    "file": "/assets/g/57.html",
-    "image": "57.pngX",
+    "file": "/assets/g/6/index.html",
+    "image": "57.png",
     "genre": "Simulation"
   },
   {
-    "name": "Wordle",
-    "file": "/assets/g/58.html",
-    "image": "58.png",
-    "genre": "Casual"
+    "name": "Amazing Rope Police",
+    "file": "/assets/g/4.html",
+    "image": "4.png",
+    "genre": "Action / Open World"
+  },
+  {
+    "name": "Demonin's Item Shop",
+    "url": "https://demonin.com/games/",
+    "image": "13.jpg",
+    "genre": "Simulation"
+  },
+  {
+    "name": "Draw the hill",
+    "file": "/assets/g/dth/index.html",
+    "image": "14.png",
+    "genre": "Strategy"
+  },
+  {
+    "name": "Just a Platformer",
+    "file":"/assets/g/jap/index.html",
+    "image": "23.png",
+    "genre": "Platformer"
+  },
+  {
+    "name": "Space Waves",
+    "file": "/assets/g/38.html",
+    "image": "38.png",
+    "genre": "Platformer"
+  },
+  {
+    "name": "Throw Rocks at Shit",
+    "file": "/assets/g/3/index.html",
+    "image": "43.png",
+    "genre": "Strategy / Arcade"
   }
 ]

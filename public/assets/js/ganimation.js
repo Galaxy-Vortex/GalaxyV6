@@ -1,6 +1,6 @@
 function gameloadanimation() {
   gsap.fromTo(
-    ".gameStagger",
+    ".game",
     {
       opacity: 0,
       y: 20,
