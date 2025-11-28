@@ -38,6 +38,7 @@ fetch("/assets/json/a.json")
           }
           openApp(ute, xt);
           frame.style.zIndex = "1";
+            frame.style.opacity = "1";
 
           document.documentElement.style.overflow = "hidden";
           const goBackBtn = document.getElementById("goBackBtn");
@@ -49,6 +50,7 @@ fetch("/assets/json/a.json")
             iframe.src = "";
             document.documentElement.style.overflow = "";
             goBackBtn.style.top = "-80px";
+            frame.style.opacity = "0";
           });
         } else if (game.file) {
           var fil = game.file;
