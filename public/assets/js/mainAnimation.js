@@ -147,13 +147,21 @@ function openWindow(
     focusCurrentWindow();
 
     windowEl.style.transition = "0s";
-    if (windowEl.classList.contains("snapped") || (windowEl.style.height == "100%" && windowEl.style.width == "100%")) {
+    if (windowEl.classList.contains("snapped")) {
       console.log("restoring");
       windowEl.classList.remove("snapped");
       windowEl.style.width = "45%";
       windowEl.style.height = "45%";
       allIframes.forEach((f) => (f.style.pointerEvents = "none"));
-
+      windowEl.style.transition = "0s";
+      windowEl.style.top = "0px";
+      isDragging = true;
+      offset.x = e.clientX - windowEl.offsetLeft;
+      offset.y = e.clientY - windowEl.offsetTop;
+    } else if (windowEl.style.width == "99.999%") {
+      windowValue = 0;
+      changeIcon();
+      allIframes.forEach((f) => (f.style.pointerEvents = "none"));
       windowEl.style.transition = "0s";
       windowEl.style.top = "0px";
       isDragging = true;
@@ -164,10 +172,10 @@ function openWindow(
       isDragging = true;
       offset.x = e.clientX - windowEl.offsetLeft;
       offset.y = e.clientY - windowEl.offsetTop;
-    } else {
+    } else if (windowValue === "0") {
       changeIcon();
+      console.log("ChangeICON");
       allIframes.forEach((f) => (f.style.pointerEvents = "none"));
-
       windowEl.style.transition = "0s";
       windowEl.style.top = "0px";
       isDragging = true;
@@ -558,8 +566,8 @@ function imacEffect() {
 imacEffect();
 function updateTime() {
   const now = new Date();
-  const timeString = now.toLocaleTimeString(); 
-  document.getElementById('timeDisplay').textContent = timeString;
+  const timeString = now.toLocaleTimeString();
+  document.getElementById("timeDisplay").textContent = timeString;
 }
 setInterval(updateTime, 1000);
-updateTime(); 
+updateTime();

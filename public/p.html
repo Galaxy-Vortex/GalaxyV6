@@ -101,6 +101,13 @@
               class="menuIcons"
             />Bug Report
           </div>
+          <div onclick="inspect()" class="menuItem">
+            <img
+              src="assets/img/icons/inspect.png "
+              alt=""
+              class="menuIcons"
+            />Inspect Element
+          </div>
           <div onclick="fullscreen()" class="menuItem">
             <img
               src="assets/img/icons/fullscreen.png"
@@ -123,3 +130,13 @@
   </body>
   <script type="module" src="assets/js/navFunctions.js"></script>
 </html>
+<script>
+  function inspect() {
+    var script = document.createElement("script");
+    script.src = "/assets/js/eruda.js";
+    document.body.append(script);
+    script.onload = function () {
+      eruda.init();
+    };
+  }
+</script>
