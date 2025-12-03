@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="assets/styles/browser.css" />
+    <script src="glass/glass.bundle.js"></script>
+    <script src="glass/glass.sw.js"></script>
+    <script src="glass/glass.config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <script defer src="assets/js/browser.js"></script>
     <script type="module" defer src="assets/js/search.js"></script>
@@ -17,3 +20,134 @@
       crossorigin="anonymous"
     ></script>
   </head>
+  <body id="body">
+    <div id="nav">
+      <div id="tabGroup"></div>
+      <div id="plusdiv" onclick="newTab()">
+        <p class="plus">+</p>
+      </div>
+    </div>
+    <div class="toolbar">
+      <div class="goBack toolbarBtn" id="goBack">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+      </div>
+      <div class="goForward toolbarBtn" id="goForward">
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </div>
+      <div class="reload toolbarBtn" id="reload" onclick="reloadX()">
+        <i class="fa-solid fa-rotate-right" aria-hidden="true"></i>
+      </div>
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="rogoisdabest" placeholder="Search" class="search" />
+      </div>
+      <div class="more toolbarBtn" id="more">
+        <i class="fa-solid fa-ellipsis"></i>
+
+        <div id="moreMenu" class="menu">
+          <div id="changeProxy" class="menuItem">
+            <img
+              src="assets/img/icons/server.png"
+              alt=""
+              class="menuIcons"
+            />Change <span class="filler">haha6767</span>
+          </div>
+          <div id="proxyMenu" class="submenu">
+            <div class="submenuItem" id="setUV">
+              U<span class="filler">haha6767</span>V
+            </div>
+            <div class="submenuItem" id="setSJ">
+              S<span class="filler">haha6767</span>J
+            </div>
+            <div class="submenuItem" id="setAuto">
+              Au<span class="filler">haha6767</span>to
+            </div>
+          </div>
+
+          <div id="AddShortcut" class="menuItem" onclick="AddShortcut()">
+            <img
+              src="assets/img/icons/bookmark.png"
+              alt=""
+              class="menuIcons"
+            />Add Bookmark
+          </div>
+          <div id="changeEngine" class="menuItem">
+            <img
+              src="assets/img/icons/search.png"
+              alt=""
+              class="menuIcons"
+            />Change Search Engine
+          </div>
+          <div id="engineMenu" class="submenu">
+            <div
+              class="submenuItem"
+              onclick="setSearchEngine('https://google.com/search?q=%s')"
+            >
+              Goog<span class="filler">haha6767</span>le
+            </div>
+            <div
+              class="submenuItem"
+              onclick="setSearchEngine('https://search.brave.com/search?q=%s')"
+            >
+              Brave
+            </div>
+            <div
+              class="submenuItem"
+              onclick="setSearchEngine('https://duckduckgo.com/?q=%s')"
+            >
+              DuckDu<span class="filler">haha6767</span>ckGo
+            </div>
+          </div>
+
+          <div id="bugReport" class="menuItem" onclick="bugReports()">
+            <img
+              src="assets/img/icons/bug-report.png"
+              alt=""
+              class="menuIcons"
+            />Bug Rep<span class="filler">haha6767</span>ort
+          </div>
+          <div onclick="inspect()" class="menuItem">
+            <img
+              src="assets/img/icons/inspect.png "
+              alt=""
+              class="menuIcons"
+            />Ins<span class="filler">haha6767</span>pect El<span class="filler"
+              >haha6767</span
+            >ement
+          </div>
+          <div onclick="fullscreen()" class="menuItem">
+            <img
+              src="assets/img/icons/fullscreen.png"
+              alt=""
+              class="menuIcons"
+            />Fu<span class="filler">haha6767</span>ll Scr<span class="filler"
+              >haha6767</span
+            >een
+          </div>
+        </div>
+        <div id="overlay" class=""></div>
+      </div>
+    </div>
+    <div class="bookmarks" id="bookmarks">
+      <div
+        class="bookmarklets"
+        onclick="openurl('https://shorturl.at/IG5Dl', 'UV')"
+      >
+        <span class="filler">haha6767</span> Disc<span class="filler"
+          >haha6767</span
+        >ord
+      </div>
+    </div>
+  </body>
+  <script type="module" src="assets/js/navFunctions.js"></script>
+</html>
+<script>
+  function inspect() {
+    var script = document.createElement("script");
+    script.src = "/assets/js/eruda.js";
+    document.body.append(script);
+    script.onload = function () {
+      eruda.init();
+    };
+  }
+</script>
