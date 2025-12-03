@@ -1,7 +1,7 @@
 :root {
   /* --backgroundURL: url("../img/black.jpg"); */
-  --glassmorphismBG: rgba(36, 35, 35, 0.196);
-  --glassmorphismBlocks: rgba(95, 95, 95, 0.219);
+  --glassmorphismBG: rgba(24, 23, 23, 0.196);
+  --glassmorphismBlocks: rgba(92, 92, 92, 0.26);
 }
 
 @font-face {

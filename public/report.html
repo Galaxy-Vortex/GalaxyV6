@@ -1,9 +1,19 @@
 <form id="bugForm">
-  <label for="name">What's your name?</label><br />
-  <textarea id="name" name="name" rows="2" cols="50"></textarea><br />
+  <h2>Submit a Report</h2>
 
-  <label for="bug">Describe the request/bug:</label><br />
-  <textarea id="bug" name="bug" rows="4" cols="50"></textarea><br />
+  <label for="reportType">Report Type</label>
+  <select id="reportType" name="reportType">
+    <option value="Bug">Bug</option>
+    <option value="Game/App Request">Game/App Request</option>
+  </select>
+
+  <label for="bug">Describe the request/bug</label>
+  <textarea
+    id="bug"
+    name="bug"
+    rows="4"
+    placeholder="Please provide details..."
+  ></textarea>
 
   <button type="submit" id="submitBtn">Submit Report</button>
 </form>
@@ -18,25 +28,28 @@
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const bugText = document.getElementById("bug").value;
-    const userName = document.getElementById("name").value;
+    const reportType = document.getElementById("reportType").value;
 
     submitBtn.disabled = true;
-    submitBtn.innerText = "Please wait 15s...";
+    submitBtn.innerText = "Wait 15 seconds...";
 
     try {
       const response = await fetch("/report-bug", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: userName, bug: bugText }),
+        body: JSON.stringify({
+          name: reportType,
+          bug: bugText,
+          url: window.location.href,
+        }),
       });
 
       if (response.ok) {
         document.getElementById("sent").innerText =
-          "Bug report sent! You can view your report on https://tinyurl.com/galaxyiscool";
+          "Report sent! You can view your report at https://tinyurl.com/galaxyiscool";
         document.getElementById("failed").innerText = "";
       } else {
-        document.getElementById("failed").innerText =
-          "Failed to send bug report.";
+        document.getElementById("failed").innerText = "Failed to send report.";
         document.getElementById("sent").innerText = "";
       }
     } catch (err) {
@@ -44,7 +57,6 @@
       document.getElementById("sent").innerText = "";
     }
 
-    // Re-enable button after 15 
     setTimeout(() => {
       submitBtn.disabled = false;
       submitBtn.innerText = "Submit Report";
@@ -54,68 +66,86 @@
 
 <style>
   body {
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: transparent;
-    height: 100%;
-    overflow: hidden;
+    background: #f4f6f8;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
   }
 
   #bugForm {
     background: #fff;
-    padding: 20px 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: auto;
-    height: auto;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    width: 350px;
+  }
+
+  #bugForm h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
   }
 
   #bugForm label {
-    font-weight: bold;
+    font-weight: 600;
+    margin-bottom: 6px;
     display: block;
-    margin: 12px 0 6px;
-    color: #333;
+    color: #444;
   }
 
+  #bugForm select,
   #bugForm textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 6px;
-    resize: vertical;
+    border-radius: 8px;
     font-size: 14px;
     font-family: inherit;
+    margin-bottom: 15px;
+    transition: border-color 0.2s ease;
+  }
+
+  #bugForm select:focus,
+  #bugForm textarea:focus {
+    border-color: #414141;
+    outline: none;
   }
 
   #bugForm button {
-    margin-top: 15px;
     width: 100%;
     padding: 12px;
-    background: #8d8d8d;
+    background: #807d7d;
     color: #fff;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
     transition: background 0.2s ease;
   }
 
   #bugForm button:hover {
-    background: #3e3e3e;
+    background: #505050;
+  }
+
+  #sent,
+  #failed {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
   }
 
   #sent {
-    margin-top: 20px;
-    font-weight: bold;
     color: #2a9d8f;
   }
 
   #failed {
-    margin-top: 20px;
-    font-weight: bold;
-    color: #9d2a2a;
+    color: #d9534f;
   }
 </style>

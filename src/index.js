@@ -156,8 +156,9 @@ fastify.post("/report-bug", async (req, reply) => {
             type: "rich",
             color: 0xff0000,
             fields: [
-              { name: "Reporter", value: name, inline: true },
-              { name: "Description", value: bug },
+              { name: "Report Type:", value: name, inline: true },
+              { name: "Description:", value: bug },
+              { name: "Page URL:", value: url }, 
             ],
             footer: { text: "Galaxy Bug Report" },
             timestamp: new Date().toISOString(),

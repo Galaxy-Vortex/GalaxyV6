@@ -1,6 +1,6 @@
 /* ===== GLOBAL ===== */
 body {
-  color: #d7d7d7;
+  color: #ffffff;
   font-family: gravity;
   margin: 0;
   padding-left: 150px;
@@ -208,7 +208,7 @@ button:hover {
   position: fixed !important;
   top: 35%;
   right: 20px;
-  background: rgba(255, 255, 255, 0.05); /* translucent */
+  background: var(--glassmorphismBlocks); /* translucent */
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 12px;
   padding: 15px 10px;
@@ -226,7 +226,7 @@ button:hover {
 }
 
 #sideNav a {
-  color: #d7d7d7;
+  color: #ffffff;
   text-decoration: none;
   font-family: gravity;
   font-size: 14px;
@@ -266,3 +266,33 @@ button:hover {
 .arial {
   font-family: fabrica
 }
+.notice {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  padding: 6px 14px;
+  font-family: fabrica;
+  font-size: 13px;
+  background: #8ffa74;
+  color: #000;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px #00000060;
+  cursor: pointer;
+}
+@keyframes noticeShow {
+  from {
+    right: -120px;
+  }
+  to {
+    right: 0px;
+  }
+}
+@keyframes noticeHide {
+  from {
+    right: -0px;
+  }
+  to {
+    right: -200px;
+  }
+}
+

@@ -82,7 +82,6 @@ function loadAutoStatus() {
 }
 window.addEventListener("load", loadAutoStatus);
 
-
 function loadTitleAndFavicon() {
   const savedTitle = localStorage.getItem("pageTitle");
   const savedFavicon = localStorage.getItem("pageFavicon");
@@ -124,9 +123,11 @@ function setBackground(bg) {
 }
 function setProxyType(x) {
   localStorage.setItem("proxyType", x);
+  loadingShow("Set to " + x)
 }
 function setSearchEngine(z) {
   localStorage.setItem("searchEngine", z);
+  loadingShow("Saved")
 }
 const uploadDiv = document.getElementById("uplaoddiv");
 const fileInput = document.getElementById("fileInput");
@@ -178,9 +179,13 @@ function loadGlassToggle() {
   if (glassToggle.checked) {
     document.documentElement.style.removeProperty("--glassmorphismBG");
   } else {
-    document.documentElement.style.setProperty("--glassmorphismBG", `rgba(0, 0, 0, 1)`);
+    document.documentElement.style.setProperty(
+      "--glassmorphismBG",
+      `rgba(0, 0, 0, 1)`
+    );
   }
-}window.addEventListener("load", loadGlassToggle);
+}
+window.addEventListener("load", loadGlassToggle);
 
 function antiClose() {
   if (antiCloseButton.checked) {
@@ -221,4 +226,31 @@ function updateTitleAndFavicon(titleName, faviconURL) {
     document.head.appendChild(link);
   }
   link.href = faviconURL;
+}
+let loadingNotice = document.createElement("div");
+function loadingShow(text) {
+  loadingNotice.className = "notice";
+  loadingNotice.textContent = text;
+  loadingNotice.style.animation = "noticeShow 0.4s ease forwards";
+  loadingNotice.addEventListener("animationend", function () {
+    loadingHide();
+  });
+
+  document.body.appendChild(loadingNotice);
+  console.log("Final URL:", input.value);
+}
+function loadingHide() {
+  loadingNotice.style.animation = "noticeHide 0.4s ease 1s forwards";
+}
+
+function copy(URLLink) {
+const message = URLLink;
+  navigator.clipboard
+    .writeText(message)
+    .then(() => {
+      loadingShow("Copied to clipboard!");
+    })
+    .catch((err) => {
+      console.error("Failed to copy: ", err);
+    });
 }
