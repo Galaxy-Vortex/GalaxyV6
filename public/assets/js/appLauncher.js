@@ -13,7 +13,6 @@ function launchApp() {
     frame.style.zIndex = "1";
   } else {
     const currentSiteUrl =
-      window.location.origin +
       "/scramjet/https%3A%2F%2Fplay.geforcenow.com%2Fmall%2F#%2Floginwall";
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("frame").src = currentSiteUrl;
