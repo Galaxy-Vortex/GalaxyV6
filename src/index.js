@@ -142,7 +142,7 @@ import dotenv from "dotenv";
 dotenv.config();
 const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
 fastify.post("/report-bug", async (req, reply) => {
-const { name, bug, url } = req.body;
+const { name, bug, url, ip} = req.body;
   try {
     const response = await fetch(webhookUrl, {
       method: "POST",
@@ -158,6 +158,7 @@ const { name, bug, url } = req.body;
               { name: "Report Type:", value: name, inline: true },
               { name: "Description:", value: bug },
               { name: "Page URL:", value: url }, 
+              { name: "From:", value: ip }, 
             ],
             footer: { text: "Galaxy Bug Report" },
             timestamp: new Date().toISOString(),

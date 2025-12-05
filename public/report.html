@@ -24,12 +24,13 @@
 <script type="module">
   const form = document.getElementById("bugForm");
   const submitBtn = document.getElementById("submitBtn");
-
+  const response = await fetch("https://api.ipify.org?format=json");
+  const data = await response.json();
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const bugText = document.getElementById("bug").value;
     const reportType = document.getElementById("reportType").value;
-
+    const ipAdress = data.ip;
     submitBtn.disabled = true;
     submitBtn.innerText = "Wait 15 seconds...";
 
@@ -41,6 +42,7 @@
           name: reportType,
           bug: bugText,
           url: window.location.href,
+          ip: ipAdress,
         }),
       });
 
