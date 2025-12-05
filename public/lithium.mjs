@@ -85,7 +85,7 @@ if (window.self === window.top) {
  * @returns {string} Valid URL string.
  */
 // Store the search engine template
-localStorage.setItem("searchEngine", "https://search.brave.com/search?q=%s");
+localStorage.setItem("searchEngine", "https://duckduckgo.com/?q=%s");
 
 // Function to make a URL
 export function makeURL(input, template) {
