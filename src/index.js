@@ -7,13 +7,21 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const publicDir = path.join(__dirname, "..", "public");
+
 const PORT = process.env.PORT || 4040;
 const HOST = process.env.HOST || "0.0.0.0";
 const NODE_ENV = process.env.NODE_ENV || "production";
+const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+
 const fastify = Fastify({
+  trustProxy: true, // <-- important if behind Caddy/Nginx
   serverFactory: (handler) => {
     return createServer()
       .on("request", (req, res) => {
@@ -27,6 +35,13 @@ const fastify = Fastify({
       });
   },
   logger: NODE_ENV === "development",
+});
+
+fastify.addHook("onRequest", async (req, reply) => {
+  const referer = req.headers['referer'] || 'N/A';
+  console.log(
+    `[${new Date().toISOString()}] Request from IP: ${req.ip}, Host: ${req.hostname}, URL: ${req.url}, Referer: ${referer}`
+  );
 });
 fastify.register(fastifyStatic, {
   root: publicDir,
@@ -138,11 +153,9 @@ fastify.listen({ port: PORT, host: HOST }, (err) => {
     console.log(`\thttp://${address.address}:${address.port}`);
   }
 });
-import dotenv from "dotenv";
-dotenv.config();
-const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+
 fastify.post("/report-bug", async (req, reply) => {
-const { name, bug, url, ip} = req.body;
+  const { name, bug, url } = req.body;
   try {
     const response = await fetch(webhookUrl, {
       method: "POST",
@@ -157,8 +170,7 @@ const { name, bug, url, ip} = req.body;
             fields: [
               { name: "Report Type:", value: name, inline: true },
               { name: "Description:", value: bug },
-              { name: "Page URL:", value: url }, 
-              // { name: "From:", value: ip }, 
+              { name: "Page URL:", value: url },
             ],
             footer: { text: "Galaxy Bug Report" },
             timestamp: new Date().toISOString(),
@@ -176,6 +188,7 @@ const { name, bug, url, ip} = req.body;
     return reply.code(500).send({ error: err.message });
   }
 });
+
 fastify.get("/allow", async (req, reply) => {
   return reply.code(200).send({ status: "allowed" });
 });
