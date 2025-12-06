@@ -56,7 +56,8 @@ const blockedIPs = new Set([
   "157.245.145.81",
   "54.252.142.62",
   "104.243.43.17",
-  "73.144.105.234"
+  "73.144.105.234",
+  "76.249.147.207"
   // keep 127.0.0.1 ONLY if you REALLY want to block localhost
 ]);
 const blockedPrefixes = [
