@@ -43,12 +43,12 @@ fastify.addHook("onRequest", async (req, reply) => {
     `[${new Date().toISOString()}] Incoming request IP: ${req.ip}, Host: ${req.hostname}, URL: ${req.url}, Referer: ${referer}`
   );
 });
-// fastify.addHook("onRequest", async (req, reply) => {
-//   if (req.ip.startsWith("45.139.104.171"||"216.73.216.89")||"165.227.229.96"||"3.110.107.74"||"67.171.143.124"||"71.226.147.237"||"67.191.160.156"||"108.50.175.95"||"162.19.137.220"||"51.195.91.122"||"57.129.15.32") {
-//     reply.code(403).send({ error: "Forbidden" });
-//     return;
-//   }
-// });
+fastify.addHook("onRequest", async (req, reply) => {
+  if (req.ip.startsWith("45.139.104.171"||"216.73.216.89")||"165.227.229.96"||"3.110.107.74"||"67.171.143.124"||"71.226.147.237"||"67.191.160.156"||"108.50.175.95"||"162.19.137.220"||"51.195.91.122"||"57.129.15.32"||"23.243.238.252") {
+    reply.code(403).send({ error: "Forbidden" });
+    return;
+  }
+});
 fastify.register(fastifyStatic, {
   root: publicDir,
   prefix: "/",
