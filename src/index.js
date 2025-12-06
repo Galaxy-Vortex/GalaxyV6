@@ -43,10 +43,6 @@ fastify.addHook("onRequest", async (req, reply) => {
     `[${new Date().toISOString()}] Incoming request IP: ${req.ip}, Host: ${req.hostname}, URL: ${req.url}, Referer: ${referer}`
   );
 });
-fastify.addHook("onRequest", async (req, reply) => {
-    reply.code(403).send({ error: "Forbidden" });
-    return; // stop processing
-});
 fastify.register(fastifyStatic, {
   root: publicDir,
   prefix: "/",
