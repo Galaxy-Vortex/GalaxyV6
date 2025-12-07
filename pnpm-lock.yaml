@@ -26,6 +26,9 @@ importers:
       '@mercuryworkshop/libcurl-transport':
         specifier: ^1.5.0
         version: 1.5.1
+      '@mercuryworkshop/wisp-js':
+        specifier: ^0.4.1
+        version: 0.4.1(utf-8-validate@6.0.5)
       dotenv:
         specifier: ^17.2.3
         version: 17.2.3
@@ -44,9 +47,6 @@ importers:
       libcurl-transport:
         specifier: link:/@mercuryworkshop/libcurl-transport
         version: link:../../../../../../../@mercuryworkshop/libcurl-transport
-      wisp-server-node:
-        specifier: ^1.1.7
-        version: 1.1.8
 
 packages:
 
@@ -115,6 +115,10 @@ packages:
 
   '@mercuryworkshop/libcurl-transport@1.5.1':
     resolution: {integrity: sha512-tNyH1HuQIJRQ2sBVeFmHcIPf15Mv5v6Zq/qrOp3ReE5oBswT13MKLSybzu2VbVRo/QNud18nbKvVz3JeSre79g==}
+
+  '@mercuryworkshop/wisp-js@0.4.1':
+    resolution: {integrity: sha512-104LwiXiuhti/e32gmv0Da0u0yuLFDHX8JawCzleTPWJ5t5qTX4EYi4E7/ucbjBPN9wwVPWHE5g5yGqzl/NzQA==}
+    hasBin: true
 
   '@pinojs/redact@0.4.0':
     resolution: {integrity: sha512-k2ENnmBugE/rzQfEcdWHcCY+/FM3VLzH9cYEsbdsoqrvzAKRhUZeRNhAZvB8OitQJ1TBed3yqWtdjzS6wJKBwg==}
@@ -231,6 +235,10 @@ packages:
   combined-stream@1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
     engines: {node: '>= 0.8'}
+
+  commander@14.0.2:
+    resolution: {integrity: sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ==}
+    engines: {node: '>=20'}
 
   content-disposition@0.5.4:
     resolution: {integrity: sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==}
@@ -522,6 +530,10 @@ packages:
 
   ipaddr.js@2.2.0:
     resolution: {integrity: sha512-Ag3wB2o37wslZS19hZqorUnrnzSkpOVy+IiiDEiTqNubEYpYuHWIf6K4psgN2ZWKExS4xhVCrRVfb/wfW8fWJA==}
+    engines: {node: '>= 10'}
+
+  ipaddr.js@2.3.0:
+    resolution: {integrity: sha512-Zv/pA+ciVFbCSBBjGfaKUya/CcGmUHzTydLMaTwrUUEM2DIEO3iZvueGxmacvmN50fGpGVKeTXpb2LcYQxeVdg==}
     engines: {node: '>= 10'}
 
   is-arrayish@0.2.1:
@@ -983,10 +995,6 @@ packages:
     engines: {node: '>= 8'}
     hasBin: true
 
-  wisp-server-node@1.1.8:
-    resolution: {integrity: sha512-NttkJBhgKVG1wut6aXABNahqZthptWc8vxgTFpQwz8/0Sa7xk0WuwEQOubvulyY0TIH3346kelQCwKTP/RN9ZQ==}
-    deprecated: wisp-server-node is deprecated due to security and stability issues, please use @mercuryworkshop/wisp-js instead.
-
   wrap-ansi@7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
     engines: {node: '>=10'}
@@ -1110,6 +1118,15 @@ snapshots:
   '@mercuryworkshop/libcurl-transport@1.5.1':
     dependencies:
       libcurl.js: 0.7.3
+
+  '@mercuryworkshop/wisp-js@0.4.1(utf-8-validate@6.0.5)':
+    dependencies:
+      bufferutil: 4.0.9
+      commander: 14.0.2
+      ipaddr.js: 2.3.0
+      ws: 8.18.3(bufferutil@4.0.9)(utf-8-validate@6.0.5)
+    transitivePeerDependencies:
+      - utf-8-validate
 
   '@pinojs/redact@0.4.0': {}
 
@@ -1243,6 +1260,8 @@ snapshots:
   combined-stream@1.0.8:
     dependencies:
       delayed-stream: 1.0.0
+
+  commander@14.0.2: {}
 
   content-disposition@0.5.4:
     dependencies:
@@ -1577,6 +1596,8 @@ snapshots:
   ipaddr.js@1.9.1: {}
 
   ipaddr.js@2.2.0: {}
+
+  ipaddr.js@2.3.0: {}
 
   is-arrayish@0.2.1: {}
 
@@ -2002,6 +2023,7 @@ snapshots:
   utf-8-validate@6.0.5:
     dependencies:
       node-gyp-build: 4.8.4
+    optional: true
 
   uuid@9.0.1: {}
 
@@ -2021,12 +2043,6 @@ snapshots:
   which@2.0.2:
     dependencies:
       isexe: 2.0.0
-
-  wisp-server-node@1.1.8:
-    dependencies:
-      bufferutil: 4.0.9
-      utf-8-validate: 6.0.5
-      ws: 8.18.3(bufferutil@4.0.9)(utf-8-validate@6.0.5)
 
   wrap-ansi@7.0.0:
     dependencies:

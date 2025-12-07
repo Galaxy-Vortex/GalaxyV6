@@ -18,12 +18,12 @@
     "@mercuryworkshop/epoxy-tls": "2.1.18-1",
     "@mercuryworkshop/epoxy-transport": "^2.1.28",
     "@mercuryworkshop/libcurl-transport": "^1.5.0",
+    "@mercuryworkshop/wisp-js": "^0.4.1",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "fastify": "^5.6.1",
     "get-title-at-url": "^2.0.0",
     "gsap": "^3.13.0",
-    "libcurl-transport": "link:/@mercuryworkshop/libcurl-transport",
-    "wisp-server-node": "^1.1.7"
+    "libcurl-transport": "link:/@mercuryworkshop/libcurl-transport"
   }
 }

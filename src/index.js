@@ -1,6 +1,6 @@
 import { createServer } from "node:http";
 import { hostname } from "node:os";
-import wisp from "wisp-server-node";
+import { server as wisp } from "@mercuryworkshop/wisp-js/server";
 import Fastify from "fastify";
 import fastifyStatic from "@fastify/static";
 import { fileURLToPath } from "node:url";
