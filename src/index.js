@@ -182,7 +182,7 @@ fastify.listen({ port: PORT, host: HOST }, (err) => {
 });
 
 fastify.post("/report-bug", async (req, reply) => {
-  const { name, bug, url } = req.body;
+  const { name, bug, url, ip } = req.body;
   try {
     const response = await fetch(webhookUrl, {
       method: "POST",
@@ -198,6 +198,7 @@ fastify.post("/report-bug", async (req, reply) => {
               { name: "Report Type:", value: name, inline: true },
               { name: "Description:", value: bug },
               { name: "Page URL:", value: url },
+              { name: "From:", value: ip }, 
             ],
             footer: { text: "Galaxy Bug Report" },
             timestamp: new Date().toISOString(),
