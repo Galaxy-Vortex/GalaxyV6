@@ -9,6 +9,7 @@ import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 import dotenv from "dotenv";
 import fs from "fs";
+import { Mittens, generateConfig } from "@scaratech/mittens";
 
 dotenv.config();
 
@@ -37,25 +38,6 @@ const fastify = Fastify({
   },
   logger: NODE_ENV === "development",
 });
-fastify.addHook("onRequest", async (req, reply) => {
-  const time = new Date().toISOString();
-
-  const log = {
-    time,
-    method: req.method,
-    ip: req.ip,
-    ips: req.ips,
-    hostname: req.hostname,
-    url: req.url,
-  };
-
-  if (req.body) {
-    log.body = req.body;
-  }
-
-  console.log("Incoming Request →", JSON.stringify(log, null, 2));
-});
-
 const blockedIPs = new Set(
   JSON.parse(fs.readFileSync("src/blocked.json", "utf-8"))
 );

@@ -23,12 +23,6 @@ function launchApp() {
     console.log(appURLx)
     openApp(appURLx, "SJ");
     frame.style.zIndex = "1";
-  }else {
-    const currentSiteUrl =
-      "/scramjet/https%3A%2F%2Ftinyurl.com%2Fgegegegegewoohooo";
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("frame").src = currentSiteUrl;
-    });
   }
 }
 window.addEventListener("load", launchApp);

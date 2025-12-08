@@ -29,6 +29,9 @@ importers:
       '@mercuryworkshop/wisp-js':
         specifier: ^0.4.1
         version: 0.4.1(utf-8-validate@6.0.5)
+      '@scaratech/mittens':
+        specifier: ^1.1.0
+        version: 1.1.0(bufferutil@4.0.9)(utf-8-validate@6.0.5)
       dotenv:
         specifier: ^17.2.3
         version: 17.2.3
@@ -122,6 +125,9 @@ packages:
 
   '@pinojs/redact@0.4.0':
     resolution: {integrity: sha512-k2ENnmBugE/rzQfEcdWHcCY+/FM3VLzH9cYEsbdsoqrvzAKRhUZeRNhAZvB8OitQJ1TBed3yqWtdjzS6wJKBwg==}
+
+  '@scaratech/mittens@1.1.0':
+    resolution: {integrity: sha512-CKoxCOMPPDbRzza364Jt9v9VDyS/kokqsd8jlpQ5SxPBvDd1Gl/T/TwxUx/1NKRFh8CJQtT8KUKUzIG0Z5emQw==}
 
   '@types/minimist@1.2.5':
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
@@ -1129,6 +1135,14 @@ snapshots:
       - utf-8-validate
 
   '@pinojs/redact@0.4.0': {}
+
+  '@scaratech/mittens@1.1.0(bufferutil@4.0.9)(utf-8-validate@6.0.5)':
+    dependencies:
+      ipaddr.js: 2.3.0
+      ws: 8.18.3(bufferutil@4.0.9)(utf-8-validate@6.0.5)
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
 
   '@types/minimist@1.2.5': {}
 
