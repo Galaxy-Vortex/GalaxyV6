@@ -40,20 +40,6 @@ const fastify = Fastify({
 });
 
 
-try {
-  const raw = fs.readFileSync("src/blocked.json", "utf-8").trim();
-
-  if (raw.length > 0) {
-    const parsed = JSON.parse(raw);
-    if (Array.isArray(parsed)) {
-      blockedIPs = new Set(parsed);
-    } else {
-      console.warn("blocked.json is not an array. Ignoring.");
-    }
-  }
-} catch (err) {
-  console.error("Failed to load blocked.json:", err.message);
-}
 fastify.register(fastifyStatic, {
   root: publicDir,
   prefix: "/",
