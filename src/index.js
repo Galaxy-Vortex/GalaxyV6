@@ -16,7 +16,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const publicDir = path.join(__dirname, "..", "public");
 
-const PORT = process.env.PORT || 1010;
+const PORT = process.env.PORT || 4040;
 const HOST = process.env.HOST || "0.0.0.0";
 const NODE_ENV = process.env.NODE_ENV || "production";
 const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
