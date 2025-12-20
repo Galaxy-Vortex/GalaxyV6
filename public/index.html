@@ -1,56 +1,192 @@
-<h1>We're changing to a faster server!</h1>
-<h2>so this li<span class="filler">6767676767</span>nk will no longer be supported</h2>
-<h2>You can j<span class="filler">6767676767</span>oin our <a href="https://tinyurl.com/galaxyiscool">Disc<span class="filler">6767676767</span>ord</a> server for wor<span class="filler">6767676767</span>king lin<span class="filler">6767676767</span>ks or use one of the provided links below</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <!--TEST-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classroom</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://ssl.gstatic.com/classroom/favicon.png"
+    />
+    <link rel="stylesheet" href="assets/styles/assets.css" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
 
-<details>
-  <summary>Ligh<span class="filler">6767676767</span>tsped</summary>
-  <ul>
-    <li><a href="https://whispering-emerald-sky.shop.cdn.cloudflare.net/"></a>https://whispering-emerald-sky.shop.cdn.cloudflare.net/</li>
-    <li><a href=""></a></li>
-  </ul>
-</details>
-<details>
-  <summary>GoGuar<span class="filler">6767676767</span>dian</summary>
-  <ul>
-    <li><a href="http://aboutus.smacs.net/"></a>https://aboutus.smacs.net/</li>
-    <li><a href="http://water.heatmypool.com/"></a>https://water.heatmypool.com/</li>
-    <li><a href=""></a></li>
-  </ul>
-</details>
-<details><span class="filler">6767676767</span>
-  <summary>Fortiguard</summary>
-  <ul>
-    <li><a href="http://aboutus.smacs.net/"></a>https://aboutus.smacs.net/</li>
-    <li><a href="http://crops.primeflk.ch/"></a>https://crops.primeflk.ch/</li>
-    <li><a href="http://policies.osiadaczabogados.cl/"></a>http://policies.osiadaczabogados.cl/</li>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script defer src="assets/js/mainAnimation.js"></script>
+    <script defer src="assets/js/auto.js"></script>
+    <script type="module" defer src="assets/js/search.js"></script>
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-5HK1EC9HVE"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  </ul>
-</details>
-<details>
-  <summary>Sec<span class="filler">6767676767</span>urly</summary>
-  <ul>
-    <li><a href=""></a>I couldn't find any 🥀</li>
-  </ul>
-</details>
-<details>
-  <summary>Cis<span class="filler">6767676767</span>co</summary>
-  <ul>
-    <li><a href="http://aboutus.smacs.net/"></a>https://aboutus.smacs.net/</li>
-    <li><a href="http://crops.primeflk.ch/"></a>https://crops.primeflk.ch/</li>
-    <li><a href="http://policies.osiadaczabogados.cl/"></a>https://policies.osiadaczabogados.cl/</li>
+    gtag("config", "G-5HK1EC9HVE");
+  </script>
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script
+    async
+    src="https://plausible.io/js/pa-PLi6D2r2ggFV1p2UfqBqN.js"
+  ></script>
+  <script>
+    (window.plausible =
+      window.plausible ||
+      function () {
+        (plausible.q = plausible.q || []).push(arguments);
+      }),
+      (plausible.init =
+        plausible.init ||
+        function (i) {
+          plausible.o = i || {};
+        });
+    plausible.init();
+  </script>
+  <body onload="checkVersion();">
+    <div class="update" id="update">
+      <h1>It looks like you're using an outdated version of Galaxy...</h1>
+      <h2>Update it by doing `Ctrl + Shift + R`</h2>
+    </div>
+    <div class="topNav">
+      <p
+        class="nameVer"
+        onclick="openWindow('left', 'updates.html', '0%', '35px', '60%', '30%')"
+      >
+        Gala<span class="filler">h</span>xyV6
+      </p>
+      <p class="verticalDivider">|</p>
+      <p class="userName"></p>
+      <div class="middle">
+        <p></p>
+      </div>
+      <div class="right">
+        <div
+          class="bugReport"
+          onclick="openWindow( 'right', 'link.html', '5%','35px','51%','30%');"
+        >
+          <img title="Links" src="assets/img/icons/link.png" class="report" />
+        </div>
+        <div
+          class="bugReport"
+          onclick="openWindow( 'right', 'report.html', '0%','35px','40%','20%');"
+        >
+          <img
+            title="Bug Report"
+            src="assets/img/icons/bug-report.png"
+            class="report"
+          />
+        </div>
 
-  </ul>
-</details>
-<details>
-  <summary>Lin<span class="filler">6767676767</span>ewize</summary>
-  <ul>
-    <li><a href="http://aboutus.smacs.net/"></a>https://aboutus.smacs.net/</li>
-    <li><a href="https://whispering-emerald-sky.shop.cdn.cloudflare.net/"></a>https://whispering-emerald-sky.shop.cdn.cloudflare.net/</li>
-  </ul>
-</details>
-<style>
-  .filler {
-  position: absolute;
-  opacity: 0;
-}
-</style>
+        <div id="timeDisplay" class="timeDisplay"></div>
+      </div>
+    </div>
+    <div class="nav">
+      <div class="navItems navStagger" onclick="openWindow('', 'p.html')">
+        <img title="Browser" src="assets/img/icons/browser.png" class="icons" />
+      </div>
+      <div
+        class="navItems navStagger"
+        onclick="openWindow('', 'g/index.html', '0%', '0%', 'calc(100% - 51px)', '99.999%')"
+      >
+        <img
+          title="Games"
+          src="assets/img/icons/controller.png"
+          class="icons"
+        />
+      </div>
+      <div
+        class="navItems navStagger"
+        onclick="openWindow('', 'a/index.html','0%', '0%', 'calc(100% - 51px)', '99.999%')"
+      >
+        <img title="Apps" src="assets/img/icons/apps.png" class="icons" />
+      </div>
+      <div
+        class="navItems navStagger"
+        onclick="openWindow('', '/scramjet/https%3A%2F%2Ftinyurl.com%2Fsd2fsdvxc34w')"
+      >
+        <img title="GeForce" src="assets/img/icons/nvidia.png" class="icons" />
+      </div>
+      <div
+        class="navItems navStagger"
+        onclick="openWindow('', 'app.html', '','','','');localStorage.setItem('storeAppURL', 'xxx');localStorage.setItem('tempProxy', 'UV')"
+      >
+        <img title="Roblox" src="assets/img/icons/boblox.png" class="icons" />
+      </div>
+
+      <div
+        class="navItems navStagger"
+        onclick="openWindow('', 'app.html', '','','','');localStorage.setItem('storeAppURL', 'https://shorturl.at/IG5Dl');localStorage.setItem('tempProxy', 'UV')"
+      >
+        <img title="Discord" src="assets/img/icons/discord.png" class="icons" />
+      </div>
+      <div
+        class="navItems navStagger"
+        onclick="openWindow('', 'settings/index.html', '0', '0', 'calc(100% - 51px)', '99.999%')"
+      >
+        <img
+          title="Settings"
+          src="assets/img/icons/settings.png"
+          class="icons"
+        />
+      </div>
+      <div id="minimizedContainer"></div>
+    </div>
+    <div id="snap-left" class="snap-preview"></div>
+    <div id="snap-right" class="snap-preview"></div>
+  </body>
+  <script>
+    if (localStorage.getItem("onboarding") == null) {
+      location.href = "onboarding/";
+    }
+
+    const latestVersion = "6.2.5";
+    const storedVersion = localStorage.getItem("galaxyVersion");
+    function update() {
+      let updateDiv = document.getElementById("update");
+      updateDiv.style.display = "flex";
+      localStorage.setItem("galaxyVersion", 0);
+    }
+
+    function checkVersion() {
+      if (storedVersion == null || storedVersion == 0) {
+        openWindow("left", "updates.html", "0px", "35px", "60%", "30%");
+        localStorage.setItem("galaxyVersion", latestVersion);
+      } else if (storedVersion !== latestVersion) {
+        update();
+      } else {
+        auto();
+      }
+    }
+    //ADSTERRA
+    document.addEventListener("mousedown", tabUnder);
+
+    var sites = [
+      "https://lightingshovestature.com/tq5s28ueku?key=787c4f20eb8c6e759c73a4963748ab1c",
+    ];
+
+    function tabUnder() {
+      var i = Math.floor(Math.random() * sites.length);
+      var newTab = window.open(sites[i], "_blank");
+
+      if (newTab) {
+        newTab.opener = null; // Prevent referrer leakage
+      }
+
+      document.removeEventListener("mousedown", tabUnder);
+    }
+
+    document.getElementById("myButton").addEventListener("click", tabUnder);    
+  </script>
+</html>
