@@ -18,7 +18,7 @@ function launchApp() {
   if (appURL == "https://shorturl.at/IG5Dl") {
     openApp(appURL, "UV");
     frame.style.zIndex = "1";
-  } else if (appURL == "xxx") {
+  } else if (appURL == "xz") {
     let appURLx = "https://" + firstThree + ".ip.nowgg.fun/apps/a/19900/b.html"
     console.log(appURLx)
     openApp(appURLx, "SJ");
@@ -39,8 +39,8 @@ function launchApp() {
         bar.style.width = "100%";
         setTimeout(() => loader.remove(), 300);
       });
-
-
 }
+
 window.addEventListener("load", launchApp);
 launchApp();
+  
