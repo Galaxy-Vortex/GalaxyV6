@@ -23,7 +23,7 @@ if (localStorage.getItem("transportType") == null) {
 }
 setTransport(transportx);
 console.log(transportx);
-setWisp("ws://5.188.124.60:8080/");
+setWisp(`${protocol}${host}/wisp/`);
 const uvList = ["https://discord.com"];
 document.addEventListener("keyup", async (e) => {
   if (e.key === "Enter" || e.keyCode === 13) {
